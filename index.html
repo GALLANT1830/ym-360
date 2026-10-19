@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142b24">
+  <title>YM360 | Young Marines Resource Hub</title>
+  <style>
+    :root {
+      --navy: #142b24;
+      --green: #285342;
+      --gold: #e4b95f;
+      --paper: #f4f5f0;
+      --ink: #202a26;
+      --muted: #68746e;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo { font-size: 1.7rem; font-weight: 900; letter-spacing: 2px; }
+    .logo span { color: var(--gold); }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; font-size: .92rem; }
+    nav a:hover { color: var(--gold); }
+
+    .hero {
+      background: linear-gradient(125deg, #142b24, #285342);
+      color: white;
+      padding: 76px 7% 82px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .78rem;
+      font-weight: bold;
+    }
+
+    h1 { font-size: clamp(2.5rem, 7vw, 4.8rem); line-height: 1.05; margin: 16px 0; }
+    .hero p { max-width: 620px; color: #e0e9e3; font-size: 1.1rem; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 12px 19px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .btn.secondary { background: transparent; color: white; border: 1px solid #91a89c; }
+    main { max-width: 1150px; margin: auto; padding: 35px 22px 65px; }
+    section { scroll-margin-top: 20px; margin-bottom: 54px; }
+    .section-heading { margin-bottom: 20px; }
+    .section-heading h2 { margin-bottom: 4px; font-size: 1.9rem; }
+    .section-heading p { color: var(--muted); margin-top: 0; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .card {
+      background: white;
+      padding: 23px;
+      border-radius: 10px;
+      border: 1px solid #e0e5df;
+      box-shadow: 0 4px 14px #142b2409;
+    }
+
+    .card .symbol { font-size: 1.6rem; }
+    .card h3 { margin: 9px 0; }
+    .card p { color: var(--muted); font-size: .94rem; }
+    .card a { color: var(--green); font-weight: bold; text-decoration: none; }
+    .search {
+      width: 100%; padding: 14px; border: 1px solid #cbd4cd;
+      border-radius: 7px; font-size: 1rem; margin: 0 0 18px;
+    }
+
+    .resource { padding: 15px 0; border-bottom: 1px solid #e0e5df; }
+    .resource h3 { margin: 0 0 4px; font-size: 1.05rem; }
+    .resource p { margin: 0 0 7px; color: var(--muted); font-size: .93rem; }
+    .tag { font-size: .75rem; background: #e7eee8; padding: 3px 8px; border-radius: 20px; }
+    .notice { background: #fff6df; padding: 16px; border-radius: 8px; border-left: 4px solid var(--gold); }
+    footer { background: var(--navy); color: #dce5df; padding: 28px 7%; font-size: .88rem; }
+    footer p { max-width: 900px; }
+
+    @media (max-width: 600px) {
+      header { padding: 16px 5%; }
+      nav { gap: 12px; }
+      .hero { padding: 54px 6%; }
+      main { padding: 28px 16px 45px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">YM<span>360</span></div>
+    <nav>
+      <a href="#resources">Resources</a>
+      <a href="#study">Study Center</a>
+      <a href="#academy">Academy Prep</a>
+      <a href="#leadership">Leadership</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="eyebrow">Your Young Marines Resource Hub</div>
+    <h1>Learn more.<br>Lead better.</h1>
+    <p>A central place to prepare for advancement, sharpen your knowledge, develop leadership, and get ready for your next challenge.</p>
+    <div class="actions">
+      <a class="btn" href="#resources">Explore Resources →</a>
+      <a class="btn secondary" href="#study">Start Studying</a>
+    </div>
+  </div>
+
+  <main>
+    <section id="resources">
+      <div class="section-heading">
+        <h2>Resource Library</h2>
+        <p>Find the guides and information you need.</p>
+      </div>
+      <input class="search" id="search" type="search" placeholder="Search resources..." aria-label="Search resources">
+      <div class="card">
+        <div id="resource-list">
+          <div class="resource" data-search="drill manual commands formations">
+            <h3>Drill & Commands</h3>
+            <p>Reference material for drill movements, commands, and formations.</p>
+            <span class="tag">Drill</span>
+          </div>
+          <div class="resource" data-search="uniform inspection grooming regulations">
+            <h3>Uniform & Inspection</h3>
+            <p>Preparation notes for uniform standards and inspections.</p>
+            <span class="tag">Uniforms</span>
+          </div>
+          <div class="resource" data-search="rank promotion advancement requirements">
+            <h3>Rank Advancement</h3>
+            <p>Organize rank requirements, study topics, and preparation checklists.</p>
+            <span class="tag">Advancement</span>
+          </div>
+          <div class="resource" data-search="physical fitness pft running exercise">
+            <h3>Physical Fitness</h3>
+            <p>Fitness preparation, event guidance, and training resources.</p>
+            <span class="tag">Fitness</span>
+          </div>
+        </div>
+        <p id="no-results" hidden>No matching resources. Try another search.</p>
+      </div>
+      <p class="notice">Resources are being organized. Official manuals and requirements should be checked against current Young Marines publications and instructions.</p>
+    </section>
+
+    <section id="study">
+      <div class="section-heading">
+        <h2>Study Center</h2>
+        <p>Build knowledge and prepare for advancement.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="symbol">📚</div>
+          <h3>Study Guides</h3>
+          <p>Organized notes for key topics and rank advancement.</p>
+        </div>
+        <div class="card">
+          <div class="symbol">🧠</div>
+          <h3>Flashcards</h3>
+          <p>A future home for question-and-answer practice cards.</p>
+        </div>
+        <div class="card">
+          <div class="symbol">✓</div>
+          <h3>Practice Quizzes</h3>
+          <p>Test what you've learned and find topics to review.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="academy">
+      <div class="section-heading">
+        <h2>Academy & Encampment Prep</h2>
+        <p>Prepare ahead of time so you can focus on learning and leading.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>🎒 Packing Checklist</h3>
+          <p>Build a checklist for required gear, uniforms, and personal items. Always follow the event's official packing list.</p>
+        </div>
+        <div class="card">
+          <h3>📅 Preparation Timeline</h3>
+          <p>Plan your preparation in advance, including study, fitness, and equipment checks.</p>
+        </div>
+        <div class="card">
+          <h3>🧭 What to Expect</h3>
+          <p>Advice on teamwork, time management, discipline, and getting the most from training.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="leadership">
+      <div class="section-heading">
+        <h2>Leadership Development</h2>
+        <p>Build the skills to help your unit and fellow Young Marines succeed.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Promotion Board Prep</h3>
+          <p>Practice explaining your knowledge, experience, and leadership lessons.</p>
+        </div>
+        <div class="card">
+          <h3>Teaching & Instruction</h3>
+          <p>Plan lessons, explain concepts clearly, and help others learn.</p>
+        </div>
+        <div class="card">
+          <h3>Planning & Organization</h3>
+          <p>Explore sample schedules, checklists, and training-plan templates.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <h2>About YM360</h2>
+      </div>
+      <div class="card">
+        <p>YM360 is an independent resource project intended to help Young Marines learn, prepare, and grow as leaders. It is not an official Young Marines website and is not endorsed by the Young Marines organization.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>YM360 — Learn. Prepare. Lead.</strong>
+    <p>Use current official Young Marines publications and instructions whenever requirements may have changed. Only share materials you have permission to distribute.</p>
+  </footer>
+
+  <script>
+    const search = document.getElementById('search');
+    const resources = [...document.querySelectorAll('.resource')];
+    const noResults = document.getElementById('no-results');
+
+    search.addEventListener('input', () => {
+      const query = search.value.toLowerCase().trim();
+      let visible = 0;
+
+      resources.forEach(resource => {
+        const text = (resource.innerText + ' ' + resource.dataset.search).toLowerCase();
+        const matches = text.includes(query);
+        resource.hidden = !matches;
+        if (matches) visible++;
+      });
+
+      noResults.hidden = visible !== 0;
+    });
+  </script>
+</body>
+</html>
