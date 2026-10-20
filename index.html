@@ -1,274 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#142b24">
-  <title>YM360 | Young Marines Resource Hub</title>
-  <style>
-    :root {
-      --navy: #142b24;
-      --green: #285342;
-      --gold: #e4b95f;
-      --paper: #f4f5f0;
-      --ink: #202a26;
-      --muted: #68746e;
-      --white: #fff;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
-
-    header {
-      background: var(--navy);
-      color: white;
-      padding: 18px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .logo { font-size: 1.7rem; font-weight: 900; letter-spacing: 2px; }
-    .logo span { color: var(--gold); }
-    nav { display: flex; gap: 18px; flex-wrap: wrap; }
-    nav a { color: white; text-decoration: none; font-size: .92rem; }
-    nav a:hover { color: var(--gold); }
-
-    .hero {
-      background: linear-gradient(125deg, #142b24, #285342);
-      color: white;
-      padding: 76px 7% 82px;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: .78rem;
-      font-weight: bold;
-    }
-
-    h1 { font-size: clamp(2.5rem, 7vw, 4.8rem); line-height: 1.05; margin: 16px 0; }
-    .hero p { max-width: 620px; color: #e0e9e3; font-size: 1.1rem; }
-    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
-
-    .btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
-      padding: 12px 19px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      border: 0;
-      cursor: pointer;
-    }
-
-    .btn.secondary { background: transparent; color: white; border: 1px solid #91a89c; }
-    main { max-width: 1150px; margin: auto; padding: 35px 22px 65px; }
-    section { scroll-margin-top: 20px; margin-bottom: 54px; }
-    .section-heading { margin-bottom: 20px; }
-    .section-heading h2 { margin-bottom: 4px; font-size: 1.9rem; }
-    .section-heading p { color: var(--muted); margin-top: 0; }
-
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-    .card {
-      background: white;
-      padding: 23px;
-      border-radius: 10px;
-      border: 1px solid #e0e5df;
-      box-shadow: 0 4px 14px #142b2409;
-    }
-
-    .card .symbol { font-size: 1.6rem; }
-    .card h3 { margin: 9px 0; }
-    .card p { color: var(--muted); font-size: .94rem; }
-    .card a { color: var(--green); font-weight: bold; text-decoration: none; }
-    .search {
-      width: 100%; padding: 14px; border: 1px solid #cbd4cd;
-      border-radius: 7px; font-size: 1rem; margin: 0 0 18px;
-    }
-
-    .resource { padding: 15px 0; border-bottom: 1px solid #e0e5df; }
-    .resource h3 { margin: 0 0 4px; font-size: 1.05rem; }
-    .resource p { margin: 0 0 7px; color: var(--muted); font-size: .93rem; }
-    .tag { font-size: .75rem; background: #e7eee8; padding: 3px 8px; border-radius: 20px; }
-    .notice { background: #fff6df; padding: 16px; border-radius: 8px; border-left: 4px solid var(--gold); }
-    footer { background: var(--navy); color: #dce5df; padding: 28px 7%; font-size: .88rem; }
-    footer p { max-width: 900px; }
-
-    @media (max-width: 600px) {
-      header { padding: 16px 5%; }
-      nav { gap: 12px; }
-      .hero { padding: 54px 6%; }
-      main { padding: 28px 16px 45px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#14213d">
+<title>YM360 | Independent Resource Hub</title>
+<style>
+:root{--red:#8d1724;--navy:#14213d;--gold:#d9b45b;--aqua:#12baca;--paper:#f5f5f2;--ink:#202124;--muted:#686b70;--line:#e5e2dc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:var(--red)}button,input,select{font:inherit}button,a{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+header{position:sticky;top:0;z-index:10;background:white;border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--navy)}
+.logo{width:60px;height:60px;object-fit:contain}
+.brand-name{font-size:23px;font-weight:900;letter-spacing:1px;line-height:1.1}
+.brand-sub{display:block;font-size:10px;letter-spacing:1px;color:var(--muted)}
+nav{display:flex;gap:16px;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--ink);font-size:14px;font-weight:700}
+nav a:hover{color:var(--red)}
+main{max-width:1200px;margin:auto;padding:24px 20px 60px}
+.hero{background:var(--navy);color:white;border-radius:14px;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;min-height:350px}
+.hero-copy{padding:clamp(25px,5vw,55px)}
+.eyebrow{color:var(--gold);font-size:12px;font-weight:850;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:clamp(34px,5vw,55px);line-height:1.04;letter-spacing:-1.5px;margin:13px 0}
+.hero p{max-width:520px;color:#e4e8ef}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-block;border:1px solid transparent;border-radius:6px;padding:11px 15px;text-decoration:none;font-size:14px;font-weight:800}
+.btn-gold{background:var(--gold);color:#271b0b}.btn-outline{border-color:#d6dce7;color:white}
+.photo{min-height:260px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px;background:linear-gradient(145deg,#243b65,#0d1527);color:white}
+.photo img{width:min(90%,340px);max-height:300px;object-fit:contain}
+.photo small{color:#d9dfeb;max-width:270px}
+.section{margin-top:42px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:17px}
+h2{font-size:clamp(25px,3vw,33px);line-height:1.15;margin:0}
+h3{font-size:19px;line-height:1.3;margin:8px 0}
+.sub{color:var(--muted);margin:6px 0 0}
+.search{display:flex;gap:10px;margin:17px 0}
+.search input{width:100%;min-width:0;padding:13px;border:1px solid #c9c9c9;border-radius:7px;background:white}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.card,.panel{background:white;border:1px solid var(--line);border-radius:10px;padding:19px}
+.card p,.panel p{font-size:14px;color:var(--muted)}
+.card .tag{font-size:11px;font-weight:850;letter-spacing:1px;text-transform:uppercase;color:var(--red)}
+.card-link{font-size:14px;font-weight:800;text-decoration:none}
+.card-link:hover{text-decoration:underline}
+.icon{font-size:27px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.flashcard{min-height:145px;border:2px solid var(--gold);border-radius:9px;background:#fffaf0;padding:20px;display:flex;flex-direction:column;justify-content:center;text-align:center;margin:13px 0}
+.flashcard strong{font-size:20px}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.tool{background:white;border:1px solid #c8c5be;border-radius:6px;padding:9px 12px;font-weight:700}
+.tool.primary{background:var(--red);color:white;border-color:var(--red)}
+.option{display:block;width:100%;text-align:left;background:white;border:1px solid var(--line);border-radius:6px;padding:11px;margin:8px 0}
+.option.correct{background:#edf7ef;border-color:#32824b}
+.option.wrong{background:#fff0f0;border-color:#b12c35}
+.notice{background:#fff9e9;border-left:4px solid var(--gold);padding:15px;font-size:14px}
+.empty{text-align:center;color:var(--muted);padding:20px}
+.hidden{display:none!important}
+.viewer{width:100%;height:620px;border:1px solid var(--line);border-radius:8px;background:#eee}
+footer{background:#201c20;color:white;padding:27px 20px}
+.footer-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer p{color:#ddd;font-size:13px;margin:5px 0}
+footer a{color:#f1d17c}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr}.photo{min-height:210px}.nav{align-items:flex-start;flex-direction:column}nav{gap:10px 15px}}
+@media(max-width:520px){main{padding:15px 12px 40px}.grid,.two{grid-template-columns:1fr}.card,.panel{padding:16px}.logo{width:48px;height:48px}.viewer{height:480px}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">YM<span>360</span></div>
-    <nav>
-      <a href="#resources">Resources</a>
-      <a href="#study">Study Center</a>
-      <a href="#academy">Academy Prep</a>
-      <a href="#leadership">Leadership</a>
+<header>
+  <div class="nav">
+    <a class="brand" href="#home">
+      <img class="logo" src="images/ym360-logo.jpeg" alt="YM360 bulldog logo" onerror="this.style.display='none'">
+      <span><span class="brand-name">YM360</span><span class="brand-sub">INDEPENDENT RESOURCE HUB</span></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#resources">Resources</a><a href="#study">Study Center</a><a href="#academy">Academy Prep</a><a href="#leadership">Leadership</a>
     </nav>
-  </header>
-
-  <div class="hero">
-    <div class="eyebrow">Your Young Marines Resource Hub</div>
-    <h1>Learn more.<br>Lead better.</h1>
-    <p>A central place to prepare for advancement, sharpen your knowledge, develop leadership, and get ready for your next challenge.</p>
-    <div class="actions">
-      <a class="btn" href="#resources">Explore Resources →</a>
-      <a class="btn secondary" href="#study">Start Studying</a>
-    </div>
   </div>
+</header>
 
-  <main>
-    <section id="resources">
-      <div class="section-heading">
-        <h2>Resource Library</h2>
-        <p>Find the guides and information you need.</p>
-      </div>
-      <input class="search" id="search" type="search" placeholder="Search resources..." aria-label="Search resources">
-      <div class="card">
-        <div id="resource-list">
-          <div class="resource" data-search="drill manual commands formations">
-            <h3>Drill & Commands</h3>
-            <p>Reference material for drill movements, commands, and formations.</p>
-            <span class="tag">Drill</span>
-          </div>
-          <div class="resource" data-search="uniform inspection grooming regulations">
-            <h3>Uniform & Inspection</h3>
-            <p>Preparation notes for uniform standards and inspections.</p>
-            <span class="tag">Uniforms</span>
-          </div>
-          <div class="resource" data-search="rank promotion advancement requirements">
-            <h3>Rank Advancement</h3>
-            <p>Organize rank requirements, study topics, and preparation checklists.</p>
-            <span class="tag">Advancement</span>
-          </div>
-          <div class="resource" data-search="physical fitness pft running exercise">
-            <h3>Physical Fitness</h3>
-            <p>Fitness preparation, event guidance, and training resources.</p>
-            <span class="tag">Fitness</span>
-          </div>
-        </div>
-        <p id="no-results" hidden>No matching resources. Try another search.</p>
-      </div>
-      <p class="notice">Resources are being organized. Official manuals and requirements should be checked against current Young Marines publications and instructions.</p>
-    </section>
+<main id="home">
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">Your training. Your next step.</div>
+      <h1>Everything you need.<br>All in one place.</h1>
+      <p>Find learning resources, review your notes, practice what you know, and build leadership skills through one organized hub.</p>
+      <div class="actions"><a class="btn btn-gold" href="#resources">Explore resources ↓</a><a class="btn btn-outline" href="#study">Open Study Center</a></div>
+    </div>
+    <div class="photo">
+      <img src="images/ym360-logo.jpeg" alt="YM360 bulldog mascot" onerror="this.outerHTML='<div style=&quot;font-size:62px&quot;>📚</div><strong>YM360 RESOURCE HUB</strong>'">
+      <small>Your training photos can go here later. Use photos you own or have permission to publish.</small>
+    </div>
+  </section>
 
-    <section id="study">
-      <div class="section-heading">
-        <h2>Study Center</h2>
-        <p>Build knowledge and prepare for advancement.</p>
-      </div>
-      <div class="cards">
-        <div class="card">
-          <div class="symbol">📚</div>
-          <h3>Study Guides</h3>
-          <p>Organized notes for key topics and rank advancement.</p>
-        </div>
-        <div class="card">
-          <div class="symbol">🧠</div>
-          <h3>Flashcards</h3>
-          <p>A future home for question-and-answer practice cards.</p>
-        </div>
-        <div class="card">
-          <div class="symbol">✓</div>
-          <h3>Practice Quizzes</h3>
-          <p>Test what you've learned and find topics to review.</p>
-        </div>
-      </div>
-    </section>
+  <section class="section" id="resources">
+    <div class="section-head"><div><div class="eyebrow">Find it fast</div><h2>Resource Library</h2><p class="sub">Search resources and open supported documents inside YM360.</p></div></div>
+    <div class="search"><input id="search" type="search" placeholder="Search drill, fitness, leadership, study guides…" aria-label="Search all resources"></div>
+    <div class="grid" id="resourceGrid">
+      <article class="card resource" data-terms="drill ceremony commands formations"><div class="icon">▤</div><div class="tag">Reference</div><h3>Drill & Ceremonies</h3><p>Organize drill notes and study the topics you need to review.</p><a class="card-link" href="#document-viewer" data-doc="resources/drill-study-guide.pdf" data-title="Drill Study Guide">Open study guide →</a></article>
+      <article class="card resource" data-terms="uniform inspection checklist preparation"><div class="icon">✓</div><div class="tag">Checklist</div><h3>Inspection Prep</h3><p>Use your personal checklist to prepare and identify topics to review.</p><a class="card-link" href="#personal-checklist">Open checklist →</a></article>
+      <article class="card resource" data-terms="rank advancement requirements study"><div class="icon">↑</div><div class="tag">Study</div><h3>Advancement Study</h3><p>Review independent notes and verify current requirements.</p><a class="card-link" href="#study">Study now →</a></article>
+      <article class="card resource" data-terms="fitness physical training readiness conditioning"><div class="icon">＋</div><div class="tag">Preparation</div><h3>Fitness & Readiness</h3><p>Plan sensible training and keep track of your own progress.</p><a class="card-link" href="#academy">Open prep tools →</a></article>
+      <article class="card resource" data-terms="leadership teamwork communication responsibility"><div class="icon">◎</div><div class="tag">Independent guide</div><h3>Leadership Skills</h3><p>Practice communication, teamwork, planning, and accountability.</p><a class="card-link" href="#leadership">Explore leadership →</a></article>
+      <article class="card resource" data-terms="flashcards quiz practice questions knowledge"><div class="icon">▦</div><div class="tag">Practice</div><h3>Flashcards & Quizzes</h3><p>Test yourself with the sample activities in the Study Center.</p><a class="card-link" href="#study">Start practicing →</a></article>
+    </div>
+    <p id="noResults" class="empty hidden">No matching resources. Try a different search.</p>
+  </section>
 
-    <section id="academy">
-      <div class="section-heading">
-        <h2>Academy & Encampment Prep</h2>
-        <p>Prepare ahead of time so you can focus on learning and leading.</p>
-      </div>
-      <div class="cards">
-        <div class="card">
-          <h3>🎒 Packing Checklist</h3>
-          <p>Build a checklist for required gear, uniforms, and personal items. Always follow the event's official packing list.</p>
-        </div>
-        <div class="card">
-          <h3>📅 Preparation Timeline</h3>
-          <p>Plan your preparation in advance, including study, fitness, and equipment checks.</p>
-        </div>
-        <div class="card">
-          <h3>🧭 What to Expect</h3>
-          <p>Advice on teamwork, time management, discipline, and getting the most from training.</p>
-        </div>
-      </div>
-    </section>
+  <section class="section" id="study">
+    <div class="section-head"><div><div class="eyebrow">Learn by doing</div><h2>Study Center</h2><p class="sub">Interactive starter tools with original practice content.</p></div></div>
+    <div class="two">
+      <div class="panel"><div class="tag">Flashcards</div><h3>Leadership Basics</h3><div class="flashcard"><strong id="flashQ">What does leading by example mean?</strong><p id="flashA" class="hidden">Showing the standards and behavior you expect from others.</p></div><div class="tools"><button class="tool" id="showA">Show answer</button><button class="tool" id="nextF">Next card →</button></div><p id="flashCount">Card 1 of 4</p></div>
+      <div class="panel"><div class="tag">Practice quiz</div><h3 id="quizQ">Which action best shows accountability?</h3><p id="quizCount">Question 1 of 4</p><div id="quizOptions"></div><p id="quizFeedback" aria-live="polite"></p><button class="tool primary" id="nextQ">Next question →</button></div>
+    </div>
+  </section>
 
-    <section id="leadership">
-      <div class="section-heading">
-        <h2>Leadership Development</h2>
-        <p>Build the skills to help your unit and fellow Young Marines succeed.</p>
-      </div>
-      <div class="cards">
-        <div class="card">
-          <h3>Promotion Board Prep</h3>
-          <p>Practice explaining your knowledge, experience, and leadership lessons.</p>
-        </div>
-        <div class="card">
-          <h3>Teaching & Instruction</h3>
-          <p>Plan lessons, explain concepts clearly, and help others learn.</p>
-        </div>
-        <div class="card">
-          <h3>Planning & Organization</h3>
-          <p>Explore sample schedules, checklists, and training-plan templates.</p>
-        </div>
-      </div>
-    </section>
+  <section class="section" id="document-viewer">
+    <div class="section-head"><div><div class="eyebrow">Read on YM360</div><h2 id="docTitle">Document Viewer</h2><p class="sub">Choose a PDF from the Resource Library to view it here.</p></div></div>
+    <div class="panel" id="viewerEmpty"><p>No document selected. When you add a PDF you have permission to publish, its card can open it here without leaving the site.</p></div>
+    <iframe id="pdfViewer" class="viewer hidden" title="Selected resource PDF"></iframe>
+    <p id="pdfHelp" class="sub hidden">If the PDF doesn't appear, check that the file exists and that its path is correct.</p>
+  </section>
 
-    <section>
-      <div class="section-heading">
-        <h2>About YM360</h2>
-      </div>
-      <div class="card">
-        <p>YM360 is an independent resource project intended to help Young Marines learn, prepare, and grow as leaders. It is not an official Young Marines website and is not endorsed by the Young Marines organization.</p>
-      </div>
-    </section>
-  </main>
+  <section class="section" id="academy">
+    <div class="section-head"><div><div class="eyebrow">Prepare with purpose</div><h2>Academy Prep</h2><p class="sub">Use this section to plan your own preparation. Verify event requirements with official organizers.</p></div></div>
+    <div class="grid">
+      <article class="card"><div class="tag">01 · Plan</div><h3>Set your goals</h3><p>Write down what you want to learn, improve, and contribute.</p></article>
+      <article class="card"><div class="tag">02 · Review</div><h3>Study consistently</h3><p>Use short study sessions and return to difficult topics.</p></article>
+      <article class="card"><div class="tag">03 · Practice</div><h3>Build confidence</h3><p>Practice skills with appropriate supervision and feedback.</p></article>
+      <article class="card"><div class="tag">04 · Verify</div><h3>Check requirements</h3><p>Confirm current instructions with official publications and unit leadership.</p></article>
+    </div>
+  </section>
 
-  <footer>
-    <strong>YM360 — Learn. Prepare. Lead.</strong>
-    <p>Use current official Young Marines publications and instructions whenever requirements may have changed. Only share materials you have permission to distribute.</p>
-  </footer>
+  <section class="section" id="leadership">
+    <div class="section-head"><div><div class="eyebrow">Skills that matter</div><h2>Leadership Toolkit</h2><p class="sub">Independent learning prompts for everyday leadership.</p></div></div>
+    <div class="grid">
+      <article class="card"><div class="icon">◎</div><h3>Communication</h3><p>Listen carefully, speak clearly, and confirm understanding.</p></article>
+      <article class="card"><div class="icon">◇</div><h3>Teamwork</h3><p>Support teammates, share responsibility, and accept feedback.</p></article>
+      <article class="card"><div class="icon">□</div><h3>Planning</h3><p>Set a goal, identify the steps, and review your progress.</p></article>
+      <article class="card"><div class="icon">✓</div><h3>Accountability</h3><p>Own your choices and work to correct mistakes.</p></article>
+    </div>
+  </section>
 
-  <script>
-    const search = document.getElementById('search');
-    const resources = [...document.querySelectorAll('.resource')];
-    const noResults = document.getElementById('no-results');
+  <section class="section" id="personal-checklist">
+    <div class="panel"><div class="eyebrow">Personal tool</div><h2>Inspection Prep Checklist</h2><p class="sub">This temporary checklist is for your current visit; it doesn't save after you close or refresh the page.</p>
+      <label><input type="checkbox"> Review the items I need to improve.</label><br>
+      <label><input type="checkbox"> Prepare and check my own equipment.</label><br>
+      <label><input type="checkbox"> Confirm current requirements with a responsible leader.</label>
+    </div>
+  </section>
 
-    search.addEventListener('input', () => {
-      const query = search.value.toLowerCase().trim();
-      let visible = 0;
+  <section class="section">
+    <div class="notice"><strong>About YM360:</strong> This is an independent, unofficial learning project. It is not affiliated with or endorsed by the Young Marines organization or the U.S. Marine Corps. Original notes and practice questions are independent educational content, not official guidance. Follow current official instructions and unit leadership for program requirements. Names, logos, documents, and other third-party materials belong to their respective owners.</div>
+    <p class="sub">For official information, visit <a href="https://youngmarines.org/" target="_blank" rel="noopener">YoungMarines.org</a>. This link is provided for reference; official pages may not be embeddable. Only upload documents and photos you have permission to redistribute.</p>
+  </section>
+</main>
 
-      resources.forEach(resource => {
-        const text = (resource.innerText + ' ' + resource.dataset.search).toLowerCase();
-        const matches = text.includes(query);
-        resource.hidden = !matches;
-        if (matches) visible++;
-      });
+<footer><div class="footer-inner"><div><strong>YM360</strong><p>Independent learning and resource hub.</p></div><p>No footer slogan yet.<br>Independent project · Not an official Young Marines website</p></div></footer>
 
-      noResults.hidden = visible !== 0;
-    });
-  </script>
+<script>
+const search=document.getElementById("search");
+const cards=[...document.querySelectorAll(".resource")];
+search.addEventListener("input",()=>{
+let shown=0,term=search.value.trim().toLowerCase();
+cards.forEach(card=>{
+  let match=(card.innerText+" "+card.dataset.terms).toLowerCase().includes(term);
+  card.classList.toggle("hidden",!match);if(match)shown++;
+});
+document.getElementById("noResults").classList.toggle("hidden",shown>0);
+});
+
+const pdf=document.getElementById("pdfViewer");
+document.querySelectorAll("[data-doc]").forEach(link=>link.addEventListener("click",()=>{
+document.getElementById("docTitle").textContent=link.dataset.title;
+document.getElementById("viewerEmpty").classList.add("hidden");
+pdf.src=link.dataset.doc;
+pdf.classList.remove("hidden");
+document.getElementById("pdfHelp").classList.remove("hidden");
+}));
+
+const flashcards=[
+["What does leading by example mean?","Showing the standards and behavior you expect from others."],
+["Why is teamwork important?","It helps people coordinate and work toward a shared goal."],
+["What should you do if instructions are unclear?","Ask a responsible leader to clarify instead of guessing."],
+["What is accountability?","Taking responsibility for your actions and helping correct mistakes."]
+];
+let fi=0,answer=false;
+function renderFlash(){
+document.getElementById("flashQ").textContent=flashcards[fi][0];
+document.getElementById("flashA").textContent=flashcards[fi][1];
+document.getElementById("flashA").classList.toggle("hidden",!answer);
+document.getElementById("showA").textContent=answer?"Hide answer":"Show answer";
+document.getElementById("flashCount").textContent="Card "+(fi+1)+" of "+flashcards.length;
+}
+document.getElementById("showA").addEventListener("click",()=>{answer=!answer;renderFlash()});
+document.getElementById("nextF").addEventListener("click",()=>{fi=(fi+1)%flashcards.length;answer=false;renderFlash()});
+
+const questions=[
+{q:"Which action best shows accountability?",o:["Blaming someone else","Owning a mistake and helping fix it","Ignoring feedback"],a:1,e:"Accountability means taking responsibility and working to correct mistakes."},
+{q:"What is a useful first step when planning a project?",o:["Set a clear goal","Wait until the last minute","Start without a plan"],a:0,e:"A clear goal helps you decide which steps and resources are needed."},
+{q:"What should you do if an instruction seems outdated?",o:["Guess what it means","Trust any social post","Check current official guidance and ask unit leadership"],a:2,e:"Verify requirements using current official sources and responsible leaders."},
+{q:"Which is a good teamwork habit?",o:["Refuse all feedback","Communicate and support teammates","Keep important information to yourself"],a:1,e:"Clear communication and mutual support help a team work together."}
+];
+let qi=0,answered=false,score=0;
+function renderQuiz(){
+let q=questions[qi];answered=false;
+document.getElementById("quizQ").textContent=q.q;
+document.getElementById("quizCount").textContent="Question "+(qi+1)+" of "+questions.length;
+document.getElementById("quizFeedback").textContent="";
+document.getElementById("nextQ").textContent="Next question →";
+let box=document.getElementById("quizOptions");box.innerHTML="";
+q.o.forEach((option,i)=>{
+  let b=document.createElement("button");b.className="option";b.textContent=option;
+  b.addEventListener("click",()=>{
+  if(answered)return;answered=true;
+  let correct=i===q.a;if(correct)score++;
+  [...box.children].forEach((el,j)=>{el.disabled=true;if(j===q.a)el.classList.add("correct")});
+  if(!correct)b.classList.add("wrong");
+  document.getElementById("quizFeedback").textContent=(correct?"Correct. ":"Not quite. ")+q.e;
+  document.getElementById("nextQ").textContent=qi===questions.length-1?"See results":"Next question →";
+  });box.appendChild(b);
+});
+}
+document.getElementById("nextQ").addEventListener("click",()=>{
+if(!answered){document.getElementById("quizFeedback").textContent="Choose an answer first.";return}
+if(qi<questions.length-1){qi++;renderQuiz()}
+else{
+  document.getElementById("quizQ").textContent="You scored "+score+" out of "+questions.length;
+  document.getElementById("quizCount").textContent="Practice complete";
+  document.getElementById("quizOptions").innerHTML="";
+  document.getElementById("quizFeedback").textContent="These are original sample questions, not an official Young Marines test.";
+  document.getElementById("nextQ").textContent="Try again";
+  document.getElementById("nextQ").onclick=()=>{qi=0;score=0;renderQuiz()};
+}
+});
+renderFlash();renderQuiz();
+</script>
 </body>
 </html>
