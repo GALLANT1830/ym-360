@@ -2,241 +2,1148 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#14213d">
-<title>YM360 | Independent Resource Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101827">
+<meta name="description" content="YM360 — an independent Young Marines resource, study, and leadership development hub.">
+<title>YM360 | Your Young Marines Resource Hub</title>
+
 <style>
-:root{--red:#8d1724;--navy:#14213d;--gold:#d9b45b;--aqua:#12baca;--paper:#f5f5f2;--ink:#202124;--muted:#686b70;--line:#e5e2dc}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-a{color:var(--red)}button,input,select{font:inherit}button,a{cursor:pointer}
-button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-header{position:sticky;top:0;z-index:10;background:white;border-bottom:1px solid var(--line)}
-.nav{max-width:1200px;margin:auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--navy)}
-.logo{width:60px;height:60px;object-fit:contain}
-.brand-name{font-size:23px;font-weight:900;letter-spacing:1px;line-height:1.1}
-.brand-sub{display:block;font-size:10px;letter-spacing:1px;color:var(--muted)}
-nav{display:flex;gap:16px;flex-wrap:wrap}
-nav a{text-decoration:none;color:var(--ink);font-size:14px;font-weight:700}
-nav a:hover{color:var(--red)}
-main{max-width:1200px;margin:auto;padding:24px 20px 60px}
-.hero{background:var(--navy);color:white;border-radius:14px;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;min-height:350px}
-.hero-copy{padding:clamp(25px,5vw,55px)}
-.eyebrow{color:var(--gold);font-size:12px;font-weight:850;letter-spacing:2px;text-transform:uppercase}
-h1{font-size:clamp(34px,5vw,55px);line-height:1.04;letter-spacing:-1.5px;margin:13px 0}
-.hero p{max-width:520px;color:#e4e8ef}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-.btn{display:inline-block;border:1px solid transparent;border-radius:6px;padding:11px 15px;text-decoration:none;font-size:14px;font-weight:800}
-.btn-gold{background:var(--gold);color:#271b0b}.btn-outline{border-color:#d6dce7;color:white}
-.photo{min-height:260px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px;background:linear-gradient(145deg,#243b65,#0d1527);color:white}
-.photo img{width:min(90%,340px);max-height:300px;object-fit:contain}
-.photo small{color:#d9dfeb;max-width:270px}
-.section{margin-top:42px}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:17px}
-h2{font-size:clamp(25px,3vw,33px);line-height:1.15;margin:0}
-h3{font-size:19px;line-height:1.3;margin:8px 0}
-.sub{color:var(--muted);margin:6px 0 0}
-.search{display:flex;gap:10px;margin:17px 0}
-.search input{width:100%;min-width:0;padding:13px;border:1px solid #c9c9c9;border-radius:7px;background:white}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.card,.panel{background:white;border:1px solid var(--line);border-radius:10px;padding:19px}
-.card p,.panel p{font-size:14px;color:var(--muted)}
-.card .tag{font-size:11px;font-weight:850;letter-spacing:1px;text-transform:uppercase;color:var(--red)}
-.card-link{font-size:14px;font-weight:800;text-decoration:none}
-.card-link:hover{text-decoration:underline}
-.icon{font-size:27px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.flashcard{min-height:145px;border:2px solid var(--gold);border-radius:9px;background:#fffaf0;padding:20px;display:flex;flex-direction:column;justify-content:center;text-align:center;margin:13px 0}
-.flashcard strong{font-size:20px}
-.tools{display:flex;gap:8px;flex-wrap:wrap}
-.tool{background:white;border:1px solid #c8c5be;border-radius:6px;padding:9px 12px;font-weight:700}
-.tool.primary{background:var(--red);color:white;border-color:var(--red)}
-.option{display:block;width:100%;text-align:left;background:white;border:1px solid var(--line);border-radius:6px;padding:11px;margin:8px 0}
-.option.correct{background:#edf7ef;border-color:#32824b}
-.option.wrong{background:#fff0f0;border-color:#b12c35}
-.notice{background:#fff9e9;border-left:4px solid var(--gold);padding:15px;font-size:14px}
-.empty{text-align:center;color:var(--muted);padding:20px}
-.hidden{display:none!important}
-.viewer{width:100%;height:620px;border:1px solid var(--line);border-radius:8px;background:#eee}
-footer{background:#201c20;color:white;padding:27px 20px}
-.footer-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer p{color:#ddd;font-size:13px;margin:5px 0}
-footer a{color:#f1d17c}
-@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr}.photo{min-height:210px}.nav{align-items:flex-start;flex-direction:column}nav{gap:10px 15px}}
-@media(max-width:520px){main{padding:15px 12px 40px}.grid,.two{grid-template-columns:1fr}.card,.panel{padding:16px}.logo{width:48px;height:48px}.viewer{height:480px}}
+:root {
+  --navy:#101827;
+  --navy2:#18253a;
+  --red:#c62835;
+  --red2:#e13c49;
+  --gold:#e6b653;
+  --bg:#f3f5f8;
+  --card:#ffffff;
+  --text:#182230;
+  --muted:#687386;
+  --border:#dfe4ec;
+  --green:#19734a;
+  --radius:16px;
+  --shadow:0 8px 28px rgba(16,24,39,.07);
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth;scroll-padding-top:90px}
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  line-height:1.6;
+}
+button,input,select,textarea {font:inherit}
+button,a { -webkit-tap-highlight-color:transparent }
+a {color:inherit}
+button {cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible {
+  outline:3px solid var(--gold);outline-offset:3px
+}
+.topbar {
+  background:var(--navy);color:white;
+  padding:12px 5%;display:flex;align-items:center;
+  justify-content:space-between;gap:16px;flex-wrap:wrap;
+  border-bottom:3px solid var(--red);
+}
+.brand {display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-mark {
+  width:47px;height:47px;border:2px solid var(--gold);
+  display:grid;place-items:center;border-radius:12px;
+  font-weight:950;font-size:19px;letter-spacing:-2px;
+  background:linear-gradient(145deg,#26344a,#101827);
+}
+.brand-name {font-size:25px;font-weight:950;letter-spacing:1px}
+.brand-name span {color:var(--gold)}
+.brand-sub {font-size:11px;color:#cbd2df;letter-spacing:1.3px;text-transform:uppercase}
+.top-actions {display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.btn {
+  border:0;border-radius:9px;padding:10px 15px;
+  font-weight:800;display:inline-flex;align-items:center;
+  justify-content:center;gap:7px;text-decoration:none;
+  transition:transform .15s,background .15s;
+}
+.btn:hover {transform:translateY(-1px)}
+.btn-red {background:var(--red);color:white}
+.btn-red:hover {background:var(--red2)}
+.btn-dark {background:var(--navy);color:white}
+.btn-light {background:#edf0f5;color:var(--navy)}
+.btn-gold {background:var(--gold);color:#172033}
+.btn-outline {background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn-small {padding:7px 10px;font-size:13px}
+.nav {
+  position:sticky;top:0;z-index:20;background:#fff;
+  border-bottom:1px solid var(--border);
+  display:flex;gap:5px;padding:8px 4%;
+  overflow-x:auto;white-space:nowrap;
+}
+.nav button {
+  flex:0 0 auto;background:transparent;border:0;
+  padding:10px 12px;border-radius:8px;font-weight:750;color:#596579;
+}
+.nav button:hover,.nav button.active {background:#fbeaec;color:var(--red)}
+main {max-width:1200px;margin:auto;padding:26px 20px 70px}
+section {margin:0 0 32px;scroll-margin-top:80px}
+.hero {
+  position:relative;overflow:hidden;background:var(--navy);
+  color:white;border-radius:22px;padding:38px;
+  display:grid;grid-template-columns:1.5fr 1fr;gap:25px;
+  box-shadow:var(--shadow);
+}
+.hero:after {
+  content:"360°";position:absolute;right:10px;bottom:-44px;
+  font-size:150px;font-weight:950;color:rgba(255,255,255,.035);
+  pointer-events:none;
+}
+.eyebrow {
+  text-transform:uppercase;letter-spacing:2px;font-size:11px;
+  font-weight:900;color:var(--gold)
+}
+h1 {font-size:clamp(35px,5vw,59px);line-height:1.03;letter-spacing:-1.7px;margin:13px 0}
+h2 {font-size:27px;line-height:1.2;margin:0 0 9px;letter-spacing:-.5px}
+h3 {font-size:18px;margin:0 0 8px}
+p {margin:8px 0 14px}
+.hero p {max-width:620px;color:#d3dae5}
+.hero-actions {display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.hero-side {
+  align-self:center;position:relative;z-index:1;
+  border:1px solid #39475b;border-radius:16px;
+  padding:22px;background:#18253a;
+}
+.hero-side h3 {color:var(--gold)}
+.hero-side li {margin:9px 0;color:#e1e6ee}
+.disclaimer {
+  background:#fff8e8;border:1px solid #f0d99c;
+  border-radius:11px;padding:12px 15px;color:#5b481f;
+  font-size:13px;margin:18px 0 24px;
+}
+.section-head {
+  display:flex;justify-content:space-between;align-items:end;
+  gap:15px;flex-wrap:wrap;margin-bottom:17px;
+}
+.section-head p {color:var(--muted);margin:4px 0 0}
+.grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.grid.two {grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid.four {grid-template-columns:repeat(4,minmax(0,1fr))}
+.card {
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);
+  min-width:0;
+}
+.card p {color:var(--muted);font-size:14px}
+.card-icon {
+  width:44px;height:44px;display:grid;place-items:center;
+  background:#fbeaec;border-radius:12px;font-size:22px;margin-bottom:14px;
+}
+.card-link {display:block;text-decoration:none;transition:transform .15s,border .15s}
+.card-link:hover {transform:translateY(-3px);border-color:#d5a1a6}
+.card-link .arrow {color:var(--red);font-weight:900}
+.stat {font-size:30px;font-weight:950;letter-spacing:-1px}
+.stat-label {font-size:12px;color:var(--muted);font-weight:700}
+.tag {
+  display:inline-block;background:#eef1f6;color:#49556a;
+  border-radius:6px;padding:4px 8px;font-size:11px;
+  font-weight:850;text-transform:uppercase;letter-spacing:.3px;
+  margin:2px 4px 2px 0;
+}
+.tag.red {background:#fbeaec;color:#a91f2d}
+.tag.gold {background:#fff1cc;color:#76540c}
+.muted {color:var(--muted)}
+.small {font-size:12px}
+.stack {display:grid;gap:12px}
+.row {display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.spread {display:flex;align-items:center;justify-content:space-between;gap:12px}
+.field {display:grid;gap:6px;margin:12px 0}
+.field label {font-size:13px;font-weight:800}
+input,select,textarea {
+  width:100%;border:1px solid #cfd6e1;border-radius:9px;
+  padding:11px 12px;background:white;color:var(--text);min-width:0;
+}
+textarea {resize:vertical;min-height:100px}
+input[type="checkbox"] {width:auto}
+.searchbar {display:flex;gap:10px;flex-wrap:wrap}
+.searchbar input {flex:1;min-width:200px}
+.resource-list {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.resource {
+  display:flex;gap:13px;align-items:flex-start;
+  padding:16px;border:1px solid var(--border);
+  border-radius:12px;background:white;min-width:0;
+}
+.resource-icon {
+  flex:0 0 42px;height:46px;display:grid;place-items:center;
+  background:#fbeaec;color:var(--red);border-radius:9px;font-weight:950;
+}
+.resource h3 {font-size:15px}
+.resource p {font-size:12px;margin:4px 0;color:var(--muted)}
+.resource-actions {display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.progress {
+  height:9px;background:#e7eaf0;border-radius:20px;overflow:hidden;
+}
+.progress-fill {height:100%;background:var(--red);width:0%;transition:width .2s}
+.check-row {
+  display:flex;gap:10px;align-items:flex-start;padding:12px 0;
+  border-bottom:1px solid var(--border);
+}
+.check-row:last-child {border:0}
+.check-row input {margin-top:5px;flex:0 0 auto}
+.check-row span {flex:1}
+.check-row small {display:block;color:var(--muted)}
+.quiz-option {
+  display:block;width:100%;text-align:left;padding:12px;
+  border:1px solid var(--border);background:white;border-radius:9px;margin:8px 0;
+}
+.quiz-option:hover {border-color:var(--red)}
+.quiz-option.correct {border-color:#24855b;background:#eaf7ef}
+.quiz-option.wrong {border-color:#c62835;background:#fff0f0}
+.feedback {padding:12px;border-radius:9px;background:#eef1f6;margin:12px 0}
+.flashcard {
+  min-height:210px;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;
+  background:var(--navy);color:white;border-radius:16px;padding:28px;
+}
+.flashcard .answer {color:var(--gold);font-size:17px;font-weight:750;margin-top:14px}
+.flashcard .question {font-size:23px;font-weight:900;line-height:1.3}
+.question-card {border:1px solid var(--border);padding:16px;border-radius:12px;background:white}
+.question-card p {margin:0 0 12px;color:var(--text);font-weight:750}
+details {border:1px solid var(--border);border-radius:10px;padding:12px 14px;background:white}
+details summary {cursor:pointer;font-weight:800}
+details p {margin-bottom:0}
+.divider {height:1px;background:var(--border);margin:18px 0}
+.notice {
+  background:#edf4ff;border:1px solid #cbdcf5;
+  border-radius:10px;padding:12px 14px;color:#29466d;font-size:13px;
+}
+.hidden {display:none!important}
+footer {background:var(--navy);color:white;padding:30px 5%}
+.footer-inner {max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer p {font-size:12px;color:#cbd2df;max-width:650px}
+footer a {color:var(--gold)}
+.empty {text-align:center;padding:25px;color:var(--muted)}
+#toast {
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  background:#18253a;color:white;padding:12px 18px;border-radius:10px;
+  z-index:100;box-shadow:var(--shadow);display:none;max-width:90vw;
+}
+@media(max-width:850px) {
+  .grid.four {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero {grid-template-columns:1fr;padding:28px}
+  .hero-side {max-width:none}
+}
+@media(max-width:570px) {
+  main {padding:17px 12px 45px}
+  .grid,.grid.two,.grid.four,.resource-list {grid-template-columns:1fr}
+  .hero {padding:24px 19px}
+  h1 {font-size:40px}
+  h2 {font-size:24px}
+  .brand-name {font-size:22px}
+  .topbar {padding:12px 4%}
+  .top-actions {width:100%}
+  .top-actions .btn {flex:1}
+  .card {padding:17px}
+}
+@media print {
+  .topbar,.nav,.top-actions,.hero-actions,footer,.no-print {display:none!important}
+  body {background:white}
+  main {max-width:none;padding:0}
+  .card {box-shadow:none;break-inside:avoid}
+}
 </style>
 </head>
+
 <body>
-<header>
-  <div class="nav">
-    <a class="brand" href="#home">
-      <img class="logo" src="images/ym360-logo.jpeg" alt="YM360 bulldog logo" onerror="this.style.display='none'">
-      <span><span class="brand-name">YM360</span><span class="brand-sub">INDEPENDENT RESOURCE HUB</span></span>
-    </a>
-    <nav aria-label="Main navigation">
-      <a href="#resources">Resources</a><a href="#study">Study Center</a><a href="#academy">Academy Prep</a><a href="#leadership">Leadership</a>
-    </nav>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="YM360 home">
+    <div class="brand-mark">YM</div>
+    <div>
+      <div class="brand-name">YM<span>360</span></div>
+      <div class="brand-sub">Learn. Lead. Serve.</div>
+    </div>
+  </a>
+  <div class="top-actions">
+    <button class="btn btn-light" onclick="window.print()">Print / Save PDF</button>
+    <a class="btn btn-red" href="#study">Start Studying ↗</a>
   </div>
 </header>
 
-<main id="home">
-  <section class="hero">
-    <div class="hero-copy">
-      <div class="eyebrow">Your training. Your next step.</div>
-      <h1>Everything you need.<br>All in one place.</h1>
-      <p>Find learning resources, review your notes, practice what you know, and build leadership skills through one organized hub.</p>
-      <div class="actions"><a class="btn btn-gold" href="#resources">Explore resources ↓</a><a class="btn btn-outline" href="#study">Open Study Center</a></div>
+<nav class="nav" aria-label="Main navigation">
+  <button class="active" data-go="home">Home</button>
+  <button data-go="journey">My YM Journey</button>
+  <button data-go="resources">Resources</button>
+  <button data-go="study">Study Center</button>
+  <button data-go="boards">Board Practice</button>
+  <button data-go="schools">Leadership Schools</button>
+  <button data-go="advice">YM Advice</button>
+  <button data-go="serve360">SERVE360</button>
+  <button data-go="about">About</button>
+</nav>
+
+<main>
+  <section id="home">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Your independent Young Marines resource hub</div>
+        <h1>Take your next step.<br><span style="color:var(--gold)">Lead with purpose.</span></h1>
+        <p>Resources, study tools, leadership preparation, and practical guidance for Young Marines at every stage of the journey.</p>
+        <div class="hero-actions">
+          <a href="#resources" class="btn btn-gold">Explore Resources →</a>
+          <a href="#journey" class="btn btn-light">Build My Plan</a>
+        </div>
+      </div>
+      <div class="hero-side">
+        <h3>Your next move starts here.</h3>
+        <ul>
+          <li>Prepare for your next rank.</li>
+          <li>Practice knowledge and board questions.</li>
+          <li>Get ready for leadership schools.</li>
+          <li>Build habits that make you a better leader.</li>
+        </ul>
+      </div>
     </div>
-    <div class="photo">
-      <img src="images/ym360-logo.jpeg" alt="YM360 bulldog mascot" onerror="this.outerHTML='<div style=&quot;font-size:62px&quot;>📚</div><strong>YM360 RESOURCE HUB</strong>'">
-      <small>Your training photos can go here later. Use photos you own or have permission to publish.</small>
+
+    <div class="disclaimer">
+      <strong>Independent project notice:</strong> YM360 is an independently created resource and is not an official Young Marines website. It is not operated, approved, or endorsed by the Young Marines national organization, the U.S. Marine Corps, or the Marine Corps League. Follow your unit's current guidance and official program materials.
+    </div>
+
+    <div class="section-head">
+      <div><h2>Your dashboard</h2><p>Pick a goal and get moving.</p></div>
+    </div>
+
+    <div class="grid four">
+      <a class="card card-link" href="#journey">
+        <div class="card-icon">🎯</div><h3>My YM Journey</h3>
+        <p>Set your focus and track your preparation.</p><span class="arrow">Open planner →</span>
+      </a>
+      <a class="card card-link" href="#resources">
+        <div class="card-icon">📚</div><h3>Resource Library</h3>
+        <p>Find the manuals and reference material you upload.</p><span class="arrow">Browse resources →</span>
+      </a>
+      <a class="card card-link" href="#study">
+        <div class="card-icon">🧠</div><h3>Study Center</h3>
+        <p>Practice flashcards and knowledge questions.</p><span class="arrow">Start studying →</span>
+      </a>
+      <a class="card card-link" href="#boards">
+        <div class="card-icon">🏅</div><h3>Board Practice</h3>
+        <p>Develop thoughtful answers for leadership boards.</p><span class="arrow">Practice now →</span>
+      </a>
+    </div>
+
+    <div class="section-head" style="margin-top:30px">
+      <div><h2>Keep your momentum</h2><p>Your checklist progress is saved in this browser on this device.</p></div>
+      <a class="btn btn-light btn-small" href="#journey">View checklist</a>
+    </div>
+    <div class="card">
+      <div class="spread"><strong>Preparation checklist</strong><strong id="homeProgressText">0%</strong></div>
+      <div class="progress" style="margin:12px 0"><div class="progress-fill" id="homeProgress"></div></div>
+      <p class="small">Check off the steps that you have completed in My YM Journey.</p>
     </div>
   </section>
 
-  <section class="section" id="resources">
-    <div class="section-head"><div><div class="eyebrow">Find it fast</div><h2>Resource Library</h2><p class="sub">Search resources and open supported documents inside YM360.</p></div></div>
-    <div class="search"><input id="search" type="search" placeholder="Search drill, fitness, leadership, study guides…" aria-label="Search all resources"></div>
-    <div class="grid" id="resourceGrid">
-      <article class="card resource" data-terms="drill ceremony commands formations"><div class="icon">▤</div><div class="tag">Reference</div><h3>Drill & Ceremonies</h3><p>Organize drill notes and study the topics you need to review.</p><a class="card-link" href="#document-viewer" data-doc="resources/drill-study-guide.pdf" data-title="Drill Study Guide">Open study guide →</a></article>
-      <article class="card resource" data-terms="uniform inspection checklist preparation"><div class="icon">✓</div><div class="tag">Checklist</div><h3>Inspection Prep</h3><p>Use your personal checklist to prepare and identify topics to review.</p><a class="card-link" href="#personal-checklist">Open checklist →</a></article>
-      <article class="card resource" data-terms="rank advancement requirements study"><div class="icon">↑</div><div class="tag">Study</div><h3>Advancement Study</h3><p>Review independent notes and verify current requirements.</p><a class="card-link" href="#study">Study now →</a></article>
-      <article class="card resource" data-terms="fitness physical training readiness conditioning"><div class="icon">＋</div><div class="tag">Preparation</div><h3>Fitness & Readiness</h3><p>Plan sensible training and keep track of your own progress.</p><a class="card-link" href="#academy">Open prep tools →</a></article>
-      <article class="card resource" data-terms="leadership teamwork communication responsibility"><div class="icon">◎</div><div class="tag">Independent guide</div><h3>Leadership Skills</h3><p>Practice communication, teamwork, planning, and accountability.</p><a class="card-link" href="#leadership">Explore leadership →</a></article>
-      <article class="card resource" data-terms="flashcards quiz practice questions knowledge"><div class="icon">▦</div><div class="tag">Practice</div><h3>Flashcards & Quizzes</h3><p>Test yourself with the sample activities in the Study Center.</p><a class="card-link" href="#study">Start practicing →</a></article>
+  <section id="journey">
+    <div class="section-head">
+      <div><h2>My YM Journey</h2><p>Build your own preparation plan. This is a personal organizer, not an official advancement tracker.</p></div>
     </div>
-    <p id="noResults" class="empty hidden">No matching resources. Try a different search.</p>
-  </section>
+    <div class="grid two">
+      <div class="card">
+        <h3>Your current focus</h3>
+        <div class="field">
+          <label for="rank">Current rank or stage</label>
+          <select id="rank">
+            <option value="">Choose a stage</option>
+            <option>Recruit</option><option>Private</option>
+            <option>Private First Class</option><option>Lance Corporal</option>
+            <option>Corporal</option><option>Sergeant</option>
+            <option>Staff Sergeant</option><option>Gunnery Sergeant</option>
+            <option>Senior leadership</option><option>Other / exploring</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="goal">My main goal</label>
+          <select id="goal">
+            <option value="">Choose a goal</option>
+            <option>Learn my current guidebook</option>
+            <option>Prepare for advancement</option>
+            <option>Prepare for a leadership board</option>
+            <option>Prepare for JLS</option>
+            <option>Prepare for SLS</option>
+            <option>Prepare for ALS</option>
+            <option>Improve drill and ceremonies</option>
+            <option>Become a stronger leader</option>
+            <option>Explore the program</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="personalNotes">My notes and next steps</label>
+          <textarea id="personalNotes" placeholder="What do you need to learn? What will you practice next?"></textarea>
+        </div>
+        <button class="btn btn-red" onclick="saveJourney()">Save my plan</button>
+        <p class="small muted">Your notes stay in this browser. Do not enter private information.</p>
+      </div>
 
-  <section class="section" id="study">
-    <div class="section-head"><div><div class="eyebrow">Learn by doing</div><h2>Study Center</h2><p class="sub">Interactive starter tools with original practice content.</p></div></div>
-    <div class="two">
-      <div class="panel"><div class="tag">Flashcards</div><h3>Leadership Basics</h3><div class="flashcard"><strong id="flashQ">What does leading by example mean?</strong><p id="flashA" class="hidden">Showing the standards and behavior you expect from others.</p></div><div class="tools"><button class="tool" id="showA">Show answer</button><button class="tool" id="nextF">Next card →</button></div><p id="flashCount">Card 1 of 4</p></div>
-      <div class="panel"><div class="tag">Practice quiz</div><h3 id="quizQ">Which action best shows accountability?</h3><p id="quizCount">Question 1 of 4</p><div id="quizOptions"></div><p id="quizFeedback" aria-live="polite"></p><button class="tool primary" id="nextQ">Next question →</button></div>
+      <div class="card">
+        <div class="spread"><h3>Preparation checklist</h3><span id="checkCount" class="tag">0 / 8</span></div>
+        <div class="progress"><div class="progress-fill" id="journeyProgress"></div></div>
+        <div id="checklist"></div>
+        <button class="btn btn-light btn-small" onclick="resetChecklist()">Reset checklist</button>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <h3>Saved plan</h3>
+      <div id="savedPlan" class="muted">Choose your focus and save your plan to see it here.</div>
     </div>
   </section>
 
-  <section class="section" id="document-viewer">
-    <div class="section-head"><div><div class="eyebrow">Read on YM360</div><h2 id="docTitle">Document Viewer</h2><p class="sub">Choose a PDF from the Resource Library to view it here.</p></div></div>
-    <div class="panel" id="viewerEmpty"><p>No document selected. When you add a PDF you have permission to publish, its card can open it here without leaving the site.</p></div>
-    <iframe id="pdfViewer" class="viewer hidden" title="Selected resource PDF"></iframe>
-    <p id="pdfHelp" class="sub hidden">If the PDF doesn't appear, check that the file exists and that its path is correct.</p>
+  <section id="resources">
+    <div class="section-head">
+      <div><h2>Resource Library</h2><p>Search the manuals and resources included in your website repository.</p></div>
+      <span class="tag gold">PDF library</span>
+    </div>
+    <div class="notice" style="margin-bottom:15px">
+      These links work only after the corresponding PDF files have been uploaded to the correct repository paths. Use the manuals your unit currently directs you to use. Permission may be required before publicly redistributing a document.
+    </div>
+    <div class="searchbar" style="margin-bottom:16px">
+      <input id="resourceSearch" type="search" placeholder="Search manuals, drill, leadership, awards..." aria-label="Search resources">
+      <select id="resourceCategory" aria-label="Filter resources by category">
+        <option value="all">All categories</option>
+        <option value="guidebook">Guidebooks</option>
+        <option value="drill">Drill & ceremonies</option>
+        <option value="awards">Awards</option>
+      </select>
+    </div>
+    <div id="resourceList" class="resource-list"></div>
+    <div class="card" style="margin-top:18px">
+      <h3>How to add another resource</h3>
+      <p>Upload the authorized PDF to your GitHub repository, then add a matching entry to the <code>RESOURCES</code> list in this file. Keep the filename and path exactly the same.</p>
+    </div>
   </section>
 
-  <section class="section" id="academy">
-    <div class="section-head"><div><div class="eyebrow">Prepare with purpose</div><h2>Academy Prep</h2><p class="sub">Use this section to plan your own preparation. Verify event requirements with official organizers.</p></div></div>
+  <section id="study">
+    <div class="section-head">
+      <div><h2>Study Center</h2><p>Practice foundational knowledge. Confirm program-specific answers against your current guidebook and unit instruction.</p></div>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <div class="spread"><h3>Flashcards</h3><span class="tag" id="flashCount">Card 1</span></div>
+        <div class="flashcard" style="margin:14px 0">
+          <div class="eyebrow" id="flashTopic">General knowledge</div>
+          <div class="question" id="flashQuestion">Loading flashcard...</div>
+          <div class="answer hidden" id="flashAnswer"></div>
+        </div>
+        <div class="row">
+          <button class="btn btn-red" id="showAnswer">Show answer</button>
+          <button class="btn btn-light" id="prevCard">← Previous</button>
+          <button class="btn btn-light" id="nextCard">Next →</button>
+        </div>
+        <p class="small muted">These are supplemental practice cards, not a complete or official exam bank.</p>
+      </div>
+
+      <div class="card">
+        <div class="spread"><h3>Knowledge quiz</h3><span class="tag" id="quizCount">Question 1</span></div>
+        <div class="progress" style="margin:12px 0"><div id="quizProgress" class="progress-fill"></div></div>
+        <p id="quizQuestion" style="font-weight:800">Loading question...</p>
+        <div id="quizOptions"></div>
+        <div id="quizFeedback" class="feedback hidden" aria-live="polite"></div>
+        <div class="spread">
+          <span id="quizScore" class="small muted">Score: 0</span>
+          <button class="btn btn-red" id="nextQuiz" disabled>Next question →</button>
+        </div>
+        <button class="btn btn-light btn-small" id="restartQuiz" style="margin-top:12px">Restart quiz</button>
+      </div>
+    </div>
+
+    <div class="grid two" style="margin-top:16px">
+      <div class="card">
+        <h3>Study method</h3>
+        <ol>
+          <li>Read the relevant section in your guidebook.</li>
+          <li>Close the book and explain the material in your own words.</li>
+          <li>Use flashcards to test what you actually remember.</li>
+          <li>Write down missed questions and revisit them later.</li>
+          <li>Ask a qualified leader to clarify anything uncertain.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Drill and ceremonies</h3>
+        <p>Use the Marine Corps Drill and Ceremonies Manual as a reference where appropriate. Young Marines requirements and local expectations may differ, so do not assume every Marine Corps procedure applies to your unit.</p>
+        <a class="btn btn-light btn-small" href="#resources">Find the drill manual →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="boards">
+    <div class="section-head">
+      <div><h2>YMOY & Leadership Board Practice</h2><p>Practice explaining your experience, decisions, and leadership philosophy in your own words.</p></div>
+    </div>
+    <div class="notice" style="margin-bottom:16px">
+      <strong>Important:</strong> Supplemental practice questions are not official questions or guaranteed board requirements. Only label a question as recalled from an actual board when its source and level are known. This starter bank contains original practice prompts.
+    </div>
+    <div class="grid four" style="margin-bottom:16px">
+      <div class="card"><div class="stat" id="boardTotal">0</div><div class="stat-label">Practice prompts</div></div>
+      <div class="card"><div class="stat" id="boardTopics">0</div><div class="stat-label">Topic areas</div></div>
+      <div class="card"><div class="stat" id="boardSaved">0</div><div class="stat-label">Marked confident</div></div>
+      <div class="card"><div class="stat">360°</div><div class="stat-label">Look at the whole leader</div></div>
+    </div>
+    <div class="card">
+      <div class="searchbar">
+        <input id="boardSearch" type="search" placeholder="Search a question or topic...">
+        <select id="boardTopic">
+          <option value="all">All topics</option>
+        </select>
+        <select id="boardLevel">
+          <option value="all">All practice levels</option>
+          <option>Unit</option><option>Regiment</option><option>Division</option><option>National</option><option>General</option>
+        </select>
+        <select id="boardStatus">
+          <option value="all">All progress</option>
+          <option value="Need Practice">Need Practice</option>
+          <option value="Practicing">Practicing</option>
+          <option value="Confident">Confident</option>
+        </select>
+      </div>
+      <div class="divider"></div>
+      <div class="spread">
+        <p id="boardResults" class="small muted">Showing questions</p>
+        <button class="btn btn-red btn-small" id="randomBoard">Random question</button>
+      </div>
+      <div id="boardList" class="stack"></div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3>Mock board mode</h3>
+      <p>Get a random prompt, answer it aloud, and evaluate the substance of your answer.</p>
+      <div class="question-card">
+        <span class="tag red">Practice prompt</span>
+        <p id="mockQuestion" style="margin-top:12px">Press the button to draw a question.</p>
+        <div class="field">
+          <label for="mockAnswer">Outline your answer</label>
+          <textarea id="mockAnswer" placeholder="Situation → action you took → result → what you learned. Use a real example when possible."></textarea>
+        </div>
+        <div class="row">
+          <button class="btn btn-red" id="drawMock">Draw question</button>
+          <button class="btn btn-light" id="copyMock">Copy my outline</button>
+        </div>
+      </div>
+      <p class="small muted">A strong answer should be honest, specific, reflective, and grounded in your own service. Do not invent accomplishments or awards.</p>
+    </div>
+  </section>
+
+  <section id="schools">
+    <div class="section-head">
+      <div><h2>Leadership Schools</h2><p>Preparation hubs for JLS, SLS, and ALS. Confirm dates, prerequisites, packing lists, and eligibility with your chain of command.</p></div>
+    </div>
     <div class="grid">
-      <article class="card"><div class="tag">01 · Plan</div><h3>Set your goals</h3><p>Write down what you want to learn, improve, and contribute.</p></article>
-      <article class="card"><div class="tag">02 · Review</div><h3>Study consistently</h3><p>Use short study sessions and return to difficult topics.</p></article>
-      <article class="card"><div class="tag">03 · Practice</div><h3>Build confidence</h3><p>Practice skills with appropriate supervision and feedback.</p></article>
-      <article class="card"><div class="tag">04 · Verify</div><h3>Check requirements</h3><p>Confirm current instructions with official publications and unit leadership.</p></article>
+      <div class="card">
+        <div class="card-icon">🧭</div><span class="tag">Junior</span>
+        <h3>JLS — Junior Leadership School</h3>
+        <p>Focus on learning the basics, following instructions, teamwork, accountability, and being a reliable teammate.</p>
+        <details><summary>Preparation checklist</summary>
+          <ul><li>Review your current guidebook.</li><li>Practice drill and uniform preparation as directed by your unit.</li><li>Work on clear communication and listening.</li><li>Confirm authorized packing requirements.</li><li>Ask your leaders what to expect at your specific school.</li></ul>
+        </details>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛡️</div><span class="tag">Intermediate</span>
+        <h3>SLS — Senior Leadership School</h3>
+        <p>Build on the fundamentals with initiative, accountability, peer leadership, and sound judgment.</p>
+        <details><summary>Preparation checklist</summary>
+          <ul><li>Review relevant guidebook topics.</li><li>Prepare examples of teamwork and problem-solving.</li><li>Practice giving clear instructions.</li><li>Think through respectful conflict resolution.</li><li>Confirm current school-specific guidance with your unit.</li></ul>
+        </details>
+      </div>
+      <div class="card">
+        <div class="card-icon">⭐</div><span class="tag">Advanced</span>
+        <h3>ALS — Advanced Leadership School</h3>
+        <p>Develop a broader perspective on mentorship, planning, communication, and serving the people you lead.</p>
+        <details><summary>Preparation checklist</summary>
+          <ul><li>Study relevant advanced guidebook material.</li><li>Prepare real examples of mentoring and initiative.</li><li>Practice planning and presenting an idea.</li><li>Reflect on how to improve your unit.</li><li>Use your authorized school materials and current instructions.</li></ul>
+        </details>
+      </div>
+    </div>
+    <div class="notice" style="margin-top:16px">
+      School descriptions on this page are general preparation suggestions, not official curricula, prerequisites, selection criteria, or promises of admission.
     </div>
   </section>
 
-  <section class="section" id="leadership">
-    <div class="section-head"><div><div class="eyebrow">Skills that matter</div><h2>Leadership Toolkit</h2><p class="sub">Independent learning prompts for everyday leadership.</p></div></div>
-    <div class="grid">
-      <article class="card"><div class="icon">◎</div><h3>Communication</h3><p>Listen carefully, speak clearly, and confirm understanding.</p></article>
-      <article class="card"><div class="icon">◇</div><h3>Teamwork</h3><p>Support teammates, share responsibility, and accept feedback.</p></article>
-      <article class="card"><div class="icon">□</div><h3>Planning</h3><p>Set a goal, identify the steps, and review your progress.</p></article>
-      <article class="card"><div class="icon">✓</div><h3>Accountability</h3><p>Own your choices and work to correct mistakes.</p></article>
+  <section id="advice">
+    <div class="section-head">
+      <div><h2>Personal YM Advice</h2><p>Reflect on challenges and plan a constructive next step.</p></div>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h3>Build a plan for a challenge</h3>
+        <p>Use this private reflection tool to organize your thoughts before talking with a trusted adult or leader.</p>
+        <div class="field">
+          <label for="challenge">What are you working through?</label>
+          <select id="challenge">
+            <option>Time management</option>
+            <option>Confidence and public speaking</option>
+            <option>Teamwork and communication</option>
+            <option>Preparing for a board</option>
+            <option>Study habits</option>
+            <option>Leadership responsibility</option>
+            <option>Motivation and consistency</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="situation">What is happening? (optional)</label>
+          <textarea id="situation" placeholder="Describe the challenge without sharing names or private information."></textarea>
+        </div>
+        <div class="field">
+          <label for="nextStep">One action I can take</label>
+          <textarea id="nextStep" placeholder="Choose one specific, realistic step."></textarea>
+        </div>
+        <button class="btn btn-red" id="buildAdvice">Build my reflection</button>
+      </div>
+      <div class="card">
+        <h3>Your reflection</h3>
+        <div id="adviceOutput" class="muted">Your reflection will appear here.</div>
+        <div class="row" style="margin-top:14px">
+          <button class="btn btn-light btn-small" id="copyAdvice">Copy reflection</button>
+          <button class="btn btn-light btn-small" id="clearAdvice">Clear</button>
+        </div>
+        <div class="divider"></div>
+        <h3>Leadership reminders</h3>
+        <ul>
+          <li>Lead by example before asking others to follow.</li>
+          <li>Listen carefully before making assumptions.</li>
+          <li>Give credit and accept responsibility.</li>
+          <li>Ask for help when a problem exceeds your role or experience.</li>
+          <li>Take feedback seriously without treating mistakes as your identity.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="notice" style="margin-top:16px">This tool does not send submissions to anyone. It is a local reflection worksheet, not a live advice submission service or a substitute for help from a trusted adult or qualified leader.</div>
+  </section>
+
+  <section id="serve360">
+    <div class="section-head">
+      <div><h2>SERVE360</h2><p>A separate ALS-focused portal concept for leadership development and authorized resources.</p></div>
+    </div>
+    <div class="hero" style="grid-template-columns:1.5fr 1fr;padding:28px">
+      <div>
+        <div class="eyebrow">Leadership development</div>
+        <h2 style="font-size:35px">Become the Leader You Needed.</h2>
+        <p>SERVE360 is intended for leadership development and ALS-related resources. Access to restricted files must be configured separately and secured on the server.</p>
+        <a class="btn btn-gold" href="serve360/">Open SERVE360 Portal →</a>
+      </div>
+      <div class="hero-side">
+        <h3>Portal status</h3>
+        <p style="color:#d3dae5">The portal requires a separately configured Cloudflare Pages backend and authorized private file storage to protect restricted materials.</p>
+        <span class="tag gold">Separate setup required</span>
+      </div>
+    </div>
+    <div class="notice" style="margin-top:15px">
+      A shared access code does not prove that someone attended ALS or is authorized to view a particular document. Do not upload sensitive, personal, or restricted materials until the access system and permissions have been properly configured.
     </div>
   </section>
 
-  <section class="section" id="personal-checklist">
-    <div class="panel"><div class="eyebrow">Personal tool</div><h2>Inspection Prep Checklist</h2><p class="sub">This temporary checklist is for your current visit; it doesn't save after you close or refresh the page.</p>
-      <label><input type="checkbox"> Review the items I need to improve.</label><br>
-      <label><input type="checkbox"> Prepare and check my own equipment.</label><br>
-      <label><input type="checkbox"> Confirm current requirements with a responsible leader.</label>
+  <section id="about">
+    <div class="section-head">
+      <div><h2>About YM360</h2><p>Built to help Young Marines learn, lead, and serve.</p></div>
     </div>
-  </section>
-
-  <section class="section">
-    <div class="notice"><strong>About YM360:</strong> This is an independent, unofficial learning project. It is not affiliated with or endorsed by the Young Marines organization or the U.S. Marine Corps. Original notes and practice questions are independent educational content, not official guidance. Follow current official instructions and unit leadership for program requirements. Names, logos, documents, and other third-party materials belong to their respective owners.</div>
-    <p class="sub">For official information, visit <a href="https://youngmarines.org/" target="_blank" rel="noopener">YoungMarines.org</a>. This link is provided for reference; official pages may not be embeddable. Only upload documents and photos you have permission to redistribute.</p>
+    <div class="grid two">
+      <div class="card">
+        <h3>Our purpose</h3>
+        <p>YM360 is an independent project intended to make learning resources, preparation tools, and leadership development easier to navigate.</p>
+        <p>The goal is to support growth from the first steps in the program through more advanced leadership responsibilities.</p>
+      </div>
+      <div class="card">
+        <h3>Our standards</h3>
+        <ul>
+          <li>Respect official program instructions.</li>
+          <li>Separate official requirements from independent advice.</li>
+          <li>Be honest about the source of questions and materials.</li>
+          <li>Protect personal information and restricted resources.</li>
+          <li>Verify changing requirements with authorized leaders.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <h3>Disclaimer and content use</h3>
+      <p>YM360 is not an official Young Marines, U.S. Marine Corps, or Marine Corps League website and is not endorsed by those organizations. Names and acronyms are used to describe the intended subject matter. This site does not establish official eligibility, promotion requirements, awards criteria, school prerequisites, or uniform regulations.</p>
+      <p>Only publish manuals, logos, photographs, and other materials when you have the right or permission to do so. Do not imply that independent material is an official publication.</p>
+    </div>
   </section>
 </main>
 
-<footer><div class="footer-inner"><div><strong>YM360</strong><p>Independent learning and resource hub.</p></div><p>No footer slogan yet.<br>Independent project · Not an official Young Marines website</p></div></footer>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="brand-name">YM<span>360</span></div>
+      <p>Learn. Lead. Serve. An independent resource hub for Young Marines.</p>
+    </div>
+    <div>
+      <strong>Quick links</strong>
+      <p><a href="#resources">Resources</a> · <a href="#study">Study Center</a> · <a href="#boards">Board Practice</a> · <a href="#about">About</a></p>
+      <p>Independent project. Not an official Young Marines website.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
 
 <script>
-const search=document.getElementById("search");
-const cards=[...document.querySelectorAll(".resource")];
-search.addEventListener("input",()=>{
-let shown=0,term=search.value.trim().toLowerCase();
-cards.forEach(card=>{
-  let match=(card.innerText+" "+card.dataset.terms).toLowerCase().includes(term);
-  card.classList.toggle("hidden",!match);if(match)shown++;
-});
-document.getElementById("noResults").classList.toggle("hidden",shown>0);
-});
+"use strict";
 
-const pdf=document.getElementById("pdfViewer");
-document.querySelectorAll("[data-doc]").forEach(link=>link.addEventListener("click",()=>{
-document.getElementById("docTitle").textContent=link.dataset.title;
-document.getElementById("viewerEmpty").classList.add("hidden");
-pdf.src=link.dataset.doc;
-pdf.classList.remove("hidden");
-document.getElementById("pdfHelp").classList.remove("hidden");
-}));
+/* =========================================================
+   YM360 CONFIGURATION
+   Add or change resource entries here.
+   Paths are relative to this index.html file.
+   ========================================================= */
 
-const flashcards=[
-["What does leading by example mean?","Showing the standards and behavior you expect from others."],
-["Why is teamwork important?","It helps people coordinate and work toward a shared goal."],
-["What should you do if instructions are unclear?","Ask a responsible leader to clarify instead of guessing."],
-["What is accountability?","Taking responsibility for your actions and helping correct mistakes."]
+const RESOURCES = [
+  {
+    title:"Basic Guidebook",
+    category:"guidebook",
+    file:"resources/2020_YM_BasicGuidebook.pdf",
+    description:"Basic guidebook for Private First Class and Lance Corporal material. Check the edition and current unit guidance.",
+    tags:"PFC Lance Corporal advancement study"
+  },
+  {
+    title:"Junior Guidebook",
+    category:"guidebook",
+    file:"resources/YM_JuniorGuideBook2008_FullBook.pdf",
+    description:"Junior-level guidebook covering foundational knowledge, drill, leadership, field skills, and citizenship.",
+    tags:"Corporal Sergeant junior drill field skills"
+  },
+  {
+    title:"Senior Guidebook",
+    category:"guidebook",
+    file:"resources/YM_Senior_GuideBook_FullBook.pdf",
+    description:"Senior-level reference covering leadership, instruction, responsibilities, field skills, and related topics.",
+    tags:"Sergeant Staff Sergeant senior leadership"
+  },
+  {
+    title:"Advanced Guidebook",
+    category:"guidebook",
+    file:"resources/GuideBook_Advanced_FullBook.pdf",
+    description:"Advanced guidebook covering leadership, planning, counseling, instruction, personal finance, and related subjects.",
+    tags:"Gunnery Sergeant advanced leadership planning"
+  },
+  {
+    title:"Awards Manual",
+    category:"awards",
+    file:"resources/Manual%20-%20YM_Awards%202017%20v3_V2.pdf",
+    description:"Awards reference from the manual supplied for this project. Verify any questions with your authorized leadership.",
+    tags:"ribbons awards medallions plaques service"
+  },
+  {
+    title:"Marine Corps Drill and Ceremonies Manual",
+    category:"drill",
+    file:"resources/MCO%205060.20_signed_EDD.pdf",
+    description:"Marine Corps drill and ceremonies reference. Not every Marine Corps procedure necessarily applies to Young Marines.",
+    tags:"MCO 5060.20 drill colors ceremonies guidon"
+  }
 ];
-let fi=0,answer=false;
-function renderFlash(){
-document.getElementById("flashQ").textContent=flashcards[fi][0];
-document.getElementById("flashA").textContent=flashcards[fi][1];
-document.getElementById("flashA").classList.toggle("hidden",!answer);
-document.getElementById("showA").textContent=answer?"Hide answer":"Show answer";
-document.getElementById("flashCount").textContent="Card "+(fi+1)+" of "+flashcards.length;
-}
-document.getElementById("showA").addEventListener("click",()=>{answer=!answer;renderFlash()});
-document.getElementById("nextF").addEventListener("click",()=>{fi=(fi+1)%flashcards.length;answer=false;renderFlash()});
 
-const questions=[
-{q:"Which action best shows accountability?",o:["Blaming someone else","Owning a mistake and helping fix it","Ignoring feedback"],a:1,e:"Accountability means taking responsibility and working to correct mistakes."},
-{q:"What is a useful first step when planning a project?",o:["Set a clear goal","Wait until the last minute","Start without a plan"],a:0,e:"A clear goal helps you decide which steps and resources are needed."},
-{q:"What should you do if an instruction seems outdated?",o:["Guess what it means","Trust any social post","Check current official guidance and ask unit leadership"],a:2,e:"Verify requirements using current official sources and responsible leaders."},
-{q:"Which is a good teamwork habit?",o:["Refuse all feedback","Communicate and support teammates","Keep important information to yourself"],a:1,e:"Clear communication and mutual support help a team work together."}
+const CHECK_ITEMS = [
+  ["Review my current guidebook","Study the sections relevant to my current stage."],
+  ["Confirm my next goal","Ask an authorized leader what I should prepare for."],
+  ["Practice knowledge","Test myself without looking at the answer."],
+  ["Work on drill","Practice only the movements and procedures I have been taught."],
+  ["Build fitness habits","Follow a safe, age-appropriate training and recovery routine."],
+  ["Practice communication","Explain an idea clearly and listen to feedback."],
+  ["Reflect on leadership","Identify one real example and what I learned from it."],
+  ["Review my progress","Choose my next steps and ask for guidance when needed."]
 ];
-let qi=0,answered=false,score=0;
-function renderQuiz(){
-let q=questions[qi];answered=false;
-document.getElementById("quizQ").textContent=q.q;
-document.getElementById("quizCount").textContent="Question "+(qi+1)+" of "+questions.length;
-document.getElementById("quizFeedback").textContent="";
-document.getElementById("nextQ").textContent="Next question →";
-let box=document.getElementById("quizOptions");box.innerHTML="";
-q.o.forEach((option,i)=>{
-  let b=document.createElement("button");b.className="option";b.textContent=option;
-  b.addEventListener("click",()=>{
-  if(answered)return;answered=true;
-  let correct=i===q.a;if(correct)score++;
-  [...box.children].forEach((el,j)=>{el.disabled=true;if(j===q.a)el.classList.add("correct")});
-  if(!correct)b.classList.add("wrong");
-  document.getElementById("quizFeedback").textContent=(correct?"Correct. ":"Not quite. ")+q.e;
-  document.getElementById("nextQ").textContent=qi===questions.length-1?"See results":"Next question →";
-  });box.appendChild(b);
-});
+
+const FLASHCARDS = [
+  {topic:"Leadership",q:"What is one practical way to lead by example?",a:"Consistently follow the same standards you ask others to follow, accept responsibility, and act with integrity."},
+  {topic:"Communication",q:"What should you do before responding to a disagreement?",a:"Listen carefully, clarify what the other person means, and respond respectfully to the actual issue."},
+  {topic:"Preparation",q:"How can you check whether you really know a topic?",a:"Explain it from memory in your own words, then compare your explanation with the authorized source."},
+  {topic:"Accountability",q:"What is a constructive response to making a mistake?",a:"Acknowledge it honestly, correct what you can, learn from it, and ask for guidance when needed."},
+  {topic:"Teamwork",q:"What is one way to support a teammate who is struggling?",a:"Listen without embarrassing them, offer appropriate help, and involve a leader if the situation requires it."},
+  {topic:"Study skills",q:"Why should you verify a program requirement in a current source?",a:"Requirements and instructions can change; relying on an old note or memory may lead to an incorrect answer."},
+  {topic:"Leadership",q:"What makes feedback useful?",a:"It is specific, respectful, actionable, and focused on behavior or improvement rather than personal attacks."},
+  {topic:"Board preparation",q:"What should a genuine leadership example explain?",a:"The situation, your actual actions, the outcome, and what you learned. Be truthful and specific."},
+  {topic:"Planning",q:"What makes a goal easier to work toward?",a:"A clear next action, a realistic timeframe, and a way to review progress."},
+  {topic:"Judgment",q:"What should you do when you do not know an answer?",a:"Be honest, explain what you do know if appropriate, and ask for clarification rather than inventing an answer."},
+  {topic:"Drill",q:"Where should you confirm the correct procedure for a drill movement?",a:"Use the applicable authorized manual and follow your instructor or unit's current direction."},
+  {topic:"Service",q:"How can you describe a service accomplishment responsibly?",a:"Explain what you actually did, your contribution, who benefited, and what you learned without exaggerating."}
+];
+
+const QUIZ = [
+  {q:"Which is the best response when you do not know a board question's answer?",options:["Invent an answer that sounds confident","Be honest and avoid pretending to know","Change the subject immediately","Claim you were never taught it"],correct:1,why:"Honesty and sound judgment are more valuable than pretending to know something."},
+  {q:"What is the most useful way to practice a flashcard?",options:["Read the answer repeatedly without testing yourself","Guess and never check","Try to recall the answer before revealing it","Memorize only the card number"],correct:2,why:"Active recall helps you identify what you can actually remember."},
+  {q:"Where should you verify a current Young Marines requirement?",options:["An old social media comment","A random online post","A rumor from another unit","Current authorized program material and your chain of command"],correct:3,why:"Use current authorized materials and confirm unit-specific guidance with your leaders."},
+  {q:"What is a constructive way to handle feedback?",options:["Listen, clarify, and identify a useful action","Dismiss it immediately","Argue before hearing the full point","Blame someone else"],correct:0,why:"Listening and choosing an actionable improvement helps you grow."},
+  {q:"Which answer is strongest when describing a leadership experience?",options:["A story you made up","A list of impressive-sounding words","A truthful example with actions, results, and lessons","An answer that avoids your own role"],correct:2,why:"A real, specific example lets you explain your judgment and growth."},
+  {q:"What should you do if a Marine Corps drill procedure seems different from your unit's instruction?",options:["Assume your unit must be wrong","Clarify which authorized procedure applies with your instructor","Ignore both sources","Change the procedure yourself"],correct:1,why:"The Marine Corps manual is a reference, but you should clarify what applies to your Young Marines activity."},
+  {q:"What is a good first step toward a large goal?",options:["Wait until you feel perfectly motivated","Try to finish everything in one day","Avoid asking questions","Choose one clear, manageable next action"],correct:3,why:"A specific next action makes a large goal more manageable."},
+  {q:"What is an appropriate response to a mistake?",options:["Hide it from everyone","Acknowledge it and work to correct it","Blame a teammate automatically","Pretend it never happened"],correct:1,why:"Accountability includes honesty, correction, and learning."}
+];
+
+/* Original supplemental board prompts.
+   Suggested practice levels are NOT claims about where a question
+   has actually been asked. Extend this list as you organize your
+   own questions and document their sources. */
+
+const BOARD_QUESTIONS = [
+  {id:"b01",topic:"Personal accomplishments & character",level:"General",q:"What accomplishment are you most proud of, and why?",hint:"Explain your actual contribution and what it taught you."},
+  {id:"b02",topic:"Personal accomplishments & character",level:"General",q:"What is one weakness you are actively working to improve?",hint:"Choose a genuine area for growth and describe what you are doing about it."},
+  {id:"b03",topic:"Personal accomplishments & character",level:"General",q:"What does integrity mean to you when no one is watching?",hint:"Use a real example or explain the choices involved."},
+  {id:"b04",topic:"Personal accomplishments & character",level:"General",q:"How do you respond when someone gives you criticism?",hint:"Explain how you listen, evaluate it, and act on it."},
+  {id:"b05",topic:"Personal accomplishments & character",level:"General",q:"What have you learned from a failure or setback?",hint:"Focus on your responsibility, lesson, and next action."},
+  {id:"b06",topic:"YMOY motivation & legacy",level:"General",q:"Why do you want to pursue a leadership recognition such as Young Marine of the Year?",hint:"Explain your motivation through service and responsibility, not just the title."},
+  {id:"b07",topic:"YMOY motivation & legacy",level:"General",q:"What would you want younger Young Marines to learn from your example?",hint:"Identify behaviors and values you actually demonstrate."},
+  {id:"b08",topic:"YMOY motivation & legacy",level:"General",q:"How would you continue contributing if you did not receive the recognition you wanted?",hint:"Discuss commitment to service independent of an outcome."},
+  {id:"b09",topic:"YMOY motivation & legacy",level:"General",q:"What does earning a leadership award mean to you?",hint:"Separate recognition from the work and responsibilities behind it."},
+  {id:"b10",topic:"Leadership & mentoring",level:"General",q:"How would you help a teammate who is falling behind?",hint:"Consider listening, practical support, dignity, and appropriate escalation."},
+  {id:"b11",topic:"Leadership & mentoring",level:"General",q:"Describe how you would approach a disagreement between two teammates.",hint:"Explain how you would hear both perspectives and follow your role and instructions."},
+  {id:"b12",topic:"Leadership & mentoring",level:"General",q:"How can you hold someone accountable while treating them fairly?",hint:"Focus on standards, consistency, respect, and following the proper process."},
+  {id:"b13",topic:"Leadership & mentoring",level:"General",q:"What would you do if a leader asked you to do something you believed was unsafe or improper?",hint:"Explain respectful communication and seeking appropriate guidance."},
+  {id:"b14",topic:"Division vision & communication",level:"Division",q:"What is one realistic improvement you would propose for your division?",hint:"Describe a specific need, a practical plan, and how you would evaluate results."},
+  {id:"b15",topic:"Division vision & communication",level:"Division",q:"How would you encourage communication between units in a division?",hint:"Offer a realistic method while respecting the established chain of command."},
+  {id:"b16",topic:"Division vision & communication",level:"Division",q:"How would you respond if a proposed improvement received little interest?",hint:"Discuss listening, revising the plan, and demonstrating value."},
+  {id:"b17",topic:"Program knowledge & service",level:"General",q:"How do you make sure your understanding of program requirements is current?",hint:"Identify authorized sources and how you would resolve conflicting information."},
+  {id:"b18",topic:"Program knowledge & service",level:"General",q:"How would you evaluate whether a community service project was successful?",hint:"Consider the actual community need, participation, outcomes, and feedback."}
+];
+
+/* Browser storage is local to this browser/device.
+   It is not a secure account system and does not sync across devices. */
+
+const STORAGE_KEY = "ym360_v1";
+let state = {
+  checklist:Array(CHECK_ITEMS.length).fill(false),
+  rank:"",
+  goal:"",
+  notes:"",
+  boardStatus:{},
+  flashIndex:0,
+  quizIndex:0,
+  quizScore:0,
+  quizAnswered:false,
+  mockQuestion:null
+};
+
+function loadState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+    state = {...state,...saved};
+    if (!Array.isArray(state.checklist) || state.checklist.length !== CHECK_ITEMS.length) {
+      state.checklist = Array(CHECK_ITEMS.length).fill(false);
+    }
+    if (!state.boardStatus || typeof state.boardStatus !== "object") state.boardStatus = {};
+  } catch (e) {}
 }
-document.getElementById("nextQ").addEventListener("click",()=>{
-if(!answered){document.getElementById("quizFeedback").textContent="Choose an answer first.";return}
-if(qi<questions.length-1){qi++;renderQuiz()}
-else{
-  document.getElementById("quizQ").textContent="You scored "+score+" out of "+questions.length;
-  document.getElementById("quizCount").textContent="Practice complete";
-  document.getElementById("quizOptions").innerHTML="";
-  document.getElementById("quizFeedback").textContent="These are original sample questions, not an official Young Marines test.";
-  document.getElementById("nextQ").textContent="Try again";
-  document.getElementById("nextQ").onclick=()=>{qi=0;score=0;renderQuiz()};
+function persist() {
+  try { localStorage.setItem(STORAGE_KEY,JSON.stringify(state)); }
+  catch (e) { toast("Your browser could not save this change."); }
 }
+function toast(message) {
+  const el = document.getElementById("toast");
+  el.textContent = message;
+  el.style.display = "block";
+  clearTimeout(toast.timer);
+  toast.timer = setTimeout(()=>el.style.display="none",2600);
+}
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g,c=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[c]));
+}
+function goTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+/* Navigation */
+document.querySelectorAll("[data-go]").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll("[data-go]").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    goTo(btn.dataset.go);
+  });
 });
-renderFlash();renderQuiz();
+
+/* Checklist and personal plan */
+function renderChecklist() {
+  const root = document.getElementById("checklist");
+  root.innerHTML = CHECK_ITEMS.map((item,i)=>`
+    <label class="check-row">
+      <input type="checkbox" data-check="${i}" ${state.checklist[i]?"checked":""}>
+      <span><strong>${escapeHTML(item[0])}</strong><small>${escapeHTML(item[1])}</small></span>
+    </label>
+  `).join("");
+  root.querySelectorAll("[data-check]").forEach(input=>{
+    input.addEventListener("change",()=>{
+      state.checklist[Number(input.dataset.check)] = input.checked;
+      persist();
+      renderChecklist();
+      renderProgress();
+    });
+  });
+  renderProgress();
+}
+function renderProgress() {
+  const count = state.checklist.filter(Boolean).length;
+  const pct = Math.round(count / CHECK_ITEMS.length * 100);
+  document.getElementById("checkCount").textContent = `${count} / ${CHECK_ITEMS.length}`;
+  document.getElementById("journeyProgress").style.width = pct+"%";
+  document.getElementById("homeProgress").style.width = pct+"%";
+  document.getElementById("homeProgressText").textContent = pct+"%";
+}
+function resetChecklist() {
+  if (!confirm("Reset your preparation checklist?")) return;
+  state.checklist = Array(CHECK_ITEMS.length).fill(false);
+  persist();renderChecklist();toast("Checklist reset.");
+}
+function saveJourney() {
+  state.rank = document.getElementById("rank").value;
+  state.goal = document.getElementById("goal").value;
+  state.notes = document.getElementById("personalNotes").value;
+  persist();renderSavedPlan();toast("Your plan was saved in this browser.");
+}
+function renderSavedPlan() {
+  document.getElementById("rank").value = state.rank || "";
+  document.getElementById("goal").value = state.goal || "";
+  document.getElementById("personalNotes").value = state.notes || "";
+  const has = state.rank || state.goal || state.notes;
+  document.getElementById("savedPlan").innerHTML = has
+    ? `<p><strong>Current stage:</strong> ${escapeHTML(state.rank||"Not selected")}</p>
+       <p><strong>Main goal:</strong> ${escapeHTML(state.goal||"Not selected")}</p>
+       <p><strong>Notes:</strong><br>${escapeHTML(state.notes||"No notes added").replace(/\n/g,"<br>")}</p>`
+    : "Choose your focus and save your plan to see it here.";
+}
+
+/* Resource library */
+function renderResources() {
+  const query = document.getElementById("resourceSearch").value.toLowerCase().trim();
+  const category = document.getElementById("resourceCategory").value;
+  const list = RESOURCES.filter(r=>
+    (category==="all" || r.category===category) &&
+    (r.title+" "+r.description+" "+r.tags).toLowerCase().includes(query)
+  );
+  const root = document.getElementById("resourceList");
+  if (!list.length) {
+    root.innerHTML = '<div class="empty">No resources match your search.</div>';
+    return;
+  }
+  root.innerHTML = list.map(r=>`
+    <article class="resource">
+      <div class="resource-icon">PDF</div>
+      <div style="min-width:0;flex:1">
+        <span class="tag">${escapeHTML(r.category)}</span>
+        <h3>${escapeHTML(r.title)}</h3>
+        <p>${escapeHTML(r.description)}</p>
+        <div class="resource-actions">
+          <a class="btn btn-red btn-small" href="${r.file}" target="_blank" rel="noopener">Open PDF ↗</a>
+          <a class="btn btn-light btn-small" href="${r.file}" download>Download</a>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+document.getElementById("resourceSearch").addEventListener("input",renderResources);
+document.getElementById("resourceCategory").addEventListener("change",renderResources);
+
+/* Flashcards */
+function renderFlashcard() {
+  const card = FLASHCARDS[state.flashIndex];
+  document.getElementById("flashCount").textContent = `Card ${state.flashIndex+1} of ${FLASHCARDS.length}`;
+  document.getElementById("flashTopic").textContent = card.topic;
+  document.getElementById("flashQuestion").textContent = card.q;
+  document.getElementById("flashAnswer").textContent = card.a;
+  document.getElementById("flashAnswer").classList.add("hidden");
+  document.getElementById("showAnswer").textContent = "Show answer";
+}
+document.getElementById("showAnswer").addEventListener("click",()=>{
+  const answer = document.getElementById("flashAnswer");
+  answer.classList.toggle("hidden");
+  document.getElementById("showAnswer").textContent = answer.classList.contains("hidden")?"Show answer":"Hide answer";
+});
+document.getElementById("prevCard").addEventListener("click",()=>{
+  state.flashIndex=(state.flashIndex-1+FLASHCARDS.length)%FLASHCARDS.length;
+  persist();renderFlashcard();
+});
+document.getElementById("nextCard").addEventListener("click",()=>{
+  state.flashIndex=(state.flashIndex+1)%FLASHCARDS.length;
+  persist();renderFlashcard();
+});
+
+/* Knowledge quiz */
+function renderQuiz() {
+  const q = QUIZ[state.quizIndex];
+  document.getElementById("quizCount").textContent = `Question ${state.quizIndex+1} of ${QUIZ.length}`;
+  document.getElementById("quizQuestion").textContent = q.q;
+  document.getElementById("quizProgress").style.width = ((state.quizIndex+1)/QUIZ.length*100)+"%";
+  document.getElementById("quizScore").textContent = `Score: ${state.quizScore}`;
+  document.getElementById("quizFeedback").classList.add("hidden");
+  document.getElementById("nextQuiz").disabled = true;
+  state.quizAnswered=false;
+  document.getElementById("quizOptions").innerHTML = q.options.map((o,i)=>
+    `<button class="quiz-option" data-option="${i}">${String.fromCharCode(65+i)}. ${escapeHTML(o)}</button>`
+  ).join("");
+  document.querySelectorAll("[data-option]").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      if (state.quizAnswered) return;
+      state.quizAnswered=true;
+      const selected=Number(btn.dataset.option);
+      const correct=selected===q.correct;
+      if (correct) state.quizScore++;
+      document.querySelectorAll("[data-option]").forEach(b=>{
+        b.disabled=true;
+        if (Number(b.dataset.option)===q.correct) b.classList.add("correct");
+      });
+      if (!correct) btn.classList.add("wrong");
+      const feedback=document.getElementById("quizFeedback");
+      feedback.classList.remove("hidden");
+      feedback.textContent=(correct?"Correct. ":"Not quite. ")+q.why;
+      document.getElementById("quizScore").textContent=`Score: ${state.quizScore}`;
+      document.getElementById("nextQuiz").disabled=false;
+    });
+  });
+}
+function nextQuiz() {
+  if (state.quizIndex < QUIZ.length-1) {
+    state.quizIndex++;
+    renderQuiz();
+  } else {
+    document.getElementById("quizQuestion").textContent=`Quiz complete. You scored ${state.quizScore} out of ${QUIZ.length}.`;
+    document.getElementById("quizOptions").innerHTML="";
+    document.getElementById("quizFeedback").classList.remove("hidden");
+    document.getElementById("quizFeedback").textContent="Review missed questions, then try again.";
+    document.getElementById("nextQuiz").disabled=true;
+    document.getElementById("quizCount").textContent="Complete";
+    document.getElementById("quizProgress").style.width="100%";
+  }
+}
+document.getElementById("nextQuiz").addEventListener("click",nextQuiz);
+document.getElementById("restartQuiz").addEventListener("click",()=>{
+  state.quizIndex=0;state.quizScore=0;renderQuiz();
+});
+
+/* Board practice */
+function getBoardStatus(id) {return state.boardStatus[id]||"Need Practice";}
+function renderBoard() {
+  const query=document.getElementById("boardSearch").value.toLowerCase().trim();
+  const topic=document.getElementById("boardTopic").value;
+  const level=document.getElementById("boardLevel").value;
+  const status=document.getElementById("boardStatus").value;
+  const topics=[...new Set(BOARD_QUESTIONS.map(q=>q.topic))];
+  const topicSelect=document.getElementById("boardTopic");
+  const oldTopic=topicSelect.value;
+  topicSelect.innerHTML='<option value="all">All topics</option>'+topics.map(t=>
+    `<option value="${escapeHTML(t)}">${escapeHTML(t)}</option>`
+  ).join("");
+  topicSelect.value=topics.includes(oldTopic)?oldTopic:"all";
+
+  const filtered=BOARD_QUESTIONS.filter(q=>{
+    const matches=(q.q+" "+q.topic+" "+q.hint).toLowerCase().includes(query);
+    return matches && (topicSelect.value==="all"||q.topic===topicSelect.value)
+      && (level==="all"||q.level===level)
+      && (status==="all"||getBoardStatus(q.id)===status);
+  });
+  document.getElementById("boardTotal").textContent=BOARD_QUESTIONS.length;
+  document.getElementById("boardTopics").textContent=topics.length;
+  document.getElementById("boardSaved").textContent=BOARD_QUESTIONS.filter(q=>getBoardStatus(q.id)==="Confident").length;
+  document.getElementById("boardResults").textContent=`Showing ${filtered.length} of ${BOARD_QUESTIONS.length} questions`;
+  const root=document.getElementById("boardList");
+  if (!filtered.length) {
+    root.innerHTML='<div class="empty">No questions match these filters. Try a different search or filter.</div>';
+    return;
+  }
+  root.innerHTML=filtered.map(q=>`
+    <article class="question-card">
+      <div class="spread" style="align-items:flex-start">
+        <div><span class="tag">${escapeHTML(q.topic)}</span><span class="tag gold">${escapeHTML(q.level)} practice</span></div>
+        <span class="tag ${getBoardStatus(q.id)==="Confident"?"gold":""}">${escapeHTML(getBoardStatus(q.id))}</span>
+      </div>
+      <p style="margin-top:12px">${escapeHTML(q.q)}</p>
+      <details><summary>Answer planning prompt</summary><p>${escapeHTML(q.hint)}</p></details>
+      <div class="row" style="margin-top:12px">
+        <label class="small" for="status-${q.id}">My progress</label>
+        <select id="status-${q.id}" data-status="${q.id}" style="width:auto;max-width:190px;padding:7px">
+          ${["Need Practice","Practicing","Confident"].map(s=>`<option ${getBoardStatus(q.id)===s?"selected":""}>${s}</option>`).join("")}
+        </select>
+        <button class="btn btn-light btn-small" data-mock="${q.id}">Practice this →</button>
+      </div>
+    </article>
+  `).join("");
+  root.querySelectorAll("[data-status]").forEach(el=>el.addEventListener("change",()=>{
+    state.boardStatus[el.dataset.status]=el.value;
+    persist();renderBoard();
+  }));
+  root.querySelectorAll("[data-mock]").forEach(el=>el.addEventListener("click",()=>{
+    const q=BOARD_QUESTIONS.find(item=>item.id===el.dataset.mock);
+    state.mockQuestion=q.id;persist();
+    document.getElementById("mockQuestion").textContent=q.q;
+    document.getElementById("mockAnswer").value="";
+    goTo("boards");
+    document.getElementById("mockAnswer").focus({preventScroll:true});
+  }));
+}
+["boardSearch","boardTopic","boardLevel","boardStatus"].forEach(id=>{
+  document.getElementById(id).addEventListener(id==="boardSearch"?"input":"change",renderBoard);
+});
+document.getElementById("randomBoard").addEventListener("click",()=>{
+  const q=BOARD_QUESTIONS[Math.floor(Math.random()*BOARD_QUESTIONS.length)];
+  document.getElementById("mockQuestion").textContent=q.q;
+  document.getElementById("mockAnswer").value="";
+  state.mockQuestion=q.id;persist();
+  goTo("boards");
+});
+document.getElementById("drawMock").addEventListener("click",()=>{
+  const q=BOARD_QUESTIONS[Math.floor(Math.random()*BOARD_QUESTIONS.length)];
+  state.mockQuestion=q.id;persist();
+  document.getElementById("mockQuestion").textContent=q.q;
+  document.getElementById("mockAnswer").value="";
+});
+document.getElementById("copyMock").addEventListener("click",async()=>{
+  const q=document.getElementById("mockQuestion").textContent;
+  const a=document.getElementById("mockAnswer").value;
+  await copyText("Question: "+q+"\n\nMy answer outline:\n"+a);
+});
+
+/* Personal reflection */
+let currentReflection="";
+document.getElementById("buildAdvice").addEventListener("click",()=>{
+  const challenge=document.getElementById("challenge").value;
+  const situation=document.getElementById("situation").value.trim();
+  const next=document.getElementById("nextStep").value.trim();
+  if (!next) {toast("Add one next step first.");return;}
+  currentReflection=
+    "MY YM360 REFLECTION\n\n"+
+    "Focus: "+challenge+"\n\n"+
+    "Situation:\n"+(situation||"Not specified")+"\n\n"+
+    "My next action:\n"+next+
+    "\n\nFollow-up: I will review my progress and seek guidance from an appropriate trusted adult or leader if needed.";
+  document.getElementById("adviceOutput").innerHTML=
+    `<p><strong>Focus:</strong> ${escapeHTML(challenge)}</p>
+     <p><strong>Situation:</strong><br>${escapeHTML(situation||"Not specified").replace(/\n/g,"<br>")}</p>
+     <p><strong>My next action:</strong><br>${escapeHTML(next).replace(/\n/g,"<br>")}</p>
+     <p class="small muted">Review your progress and seek appropriate guidance if needed.</p>`;
+});
+document.getElementById("copyAdvice").addEventListener("click",()=>copyText(currentReflection));
+document.getElementById("clearAdvice").addEventListener("click",()=>{
+  document.getElementById("situation").value="";
+  document.getElementById("nextStep").value="";
+  document.getElementById("adviceOutput").textContent="Your reflection will appear here.";
+  currentReflection="";
+});
+
+/* Copy helper */
+async function copyText(text) {
+  if (!text) {toast("There is nothing to copy yet.");return;}
+  try {
+    await navigator.clipboard.writeText(text);
+    toast("Copied to clipboard.");
+  } catch (e) {
+    const area=document.createElement("textarea");
+    area.value=text;area.style.position="fixed";area.style.opacity="0";
+    document.body.appendChild(area);area.select();
+    try {document.execCommand("copy");toast("Copied to clipboard.");}
+    catch (err) {toast("Copy was blocked by the browser. Select and copy the text manually.");}
+    area.remove();
+  }
+}
+
+/* Start the website */
+loadState();
+renderChecklist();
+renderSavedPlan();
+renderResources();
+renderFlashcard();
+renderQuiz();
+renderBoard();
 </script>
 </body>
 </html>
